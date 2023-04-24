@@ -8,8 +8,8 @@ const Contact = () => {
 	return (
     <section className='padding-block-900'>
     <div className='container'>
-      <div className='columns'>
-					<div className=''>
+      <div className='columns contact'>
+					<div className='contactSection'>
 						<h4 className='fs-700 fw-bold padding-block-200'>Contact Us</h4>
 						<p className='fs-400'>
 							Feel free to contact us any time. We will get back to you as soon

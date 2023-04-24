@@ -287,7 +287,6 @@ border: 0;}
 }
 /* Contact*/
 .columns >form{
-  width: 400px;
 
 }
 .columns form div > input{
@@ -307,16 +306,15 @@ border: 0;}
   justify-content: center;
   height: 80px;
 }
-.contactSection{
-display: flex;
-justify-content: space-between;
+.contact{
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
 }
 .send{
   display: grid;
 place-items: center;}
 .infoSection{
   height: 400px;
-  width: 400px;
   border-radius: 5px;
 }
 .infoFlex{
@@ -378,6 +376,7 @@ padding: var(--size-200);
       grid-auto-flow: column;
       grid-auto-columns: 1fr;
     }
+  
     .card> img{
       aspect-ratio: 16/11;
     }
@@ -428,4 +427,9 @@ flex-direction: column;
   aspect-ratio: 16 / 8;
 
 }
+.contact{
+    grid-template-columns: repeat(1, 375px);
+
+}
+
 }
