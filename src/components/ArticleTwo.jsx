@@ -8,7 +8,7 @@ const ArticleTwo = ({header,heading, paragraph}) => {
         </div>
         <div className='padding-block-300 heading'>
 <p className='fs-600 fw-bold'>{heading}</p>
-<p className='fs-300 padding-block-200'>{paragraph}</p>
+<p className='fs-100 padding-block-200'>{paragraph}</p>
 </div>
 </div>
   )

@@ -11,9 +11,7 @@ const Section = () => {
       <div className=''>
         <h4 className=' text-neutral-100 fw-bold fs-secondary-heading '>We add values to our students journey</h4>
         </div>
-        
         <div className=' text-neutral-100 padding-block-300'>
-         
           <Article icon={<FaRegUserCircle/>} heading="Easy Registration" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           <Article icon={<GrPersonalComputer/>} heading="Online Classes" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           <Article  icon={<FaChalkboardTeacher/>} heading="Expert tutors" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam," />

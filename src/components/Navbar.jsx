@@ -19,7 +19,7 @@ export const Navbar = () => {
     <ul className={isOpen ? 'nav-wrapper active' : 'nav-wrapper'} >
        <li> <Link className={location.pathname === "/" ? "activeClass" : "inactiveClass" } to="/">Home</Link></li>
        <li> <Link className={location.pathname === "/courses" ? "activeClass" : "inactiveClass" } to="courses">Courses</Link></li>
-        <li><Link className={location.pathname === "/services" ? "activeClass" : "inactiveClass" } to="services">Services</Link></li>
+        <li><Link className={location.pathname === "/resources" ? "activeClass" : "inactiveClass" } to="services">Resources</Link></li>
         <li><Link className={location.pathname === "/blog" ? "activeClass" : "inactiveClass" } to="blog">Blog</Link></li>
         <li><Link className={location.pathname === "/contact" ? "activeClass" : "inactiveClass" } to="contact">Contact</Link></li>
         </ul>
