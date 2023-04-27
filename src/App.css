@@ -232,19 +232,19 @@ box-shadow: 0 0.25em 0.75em hsl(1 1% 1% / 20%);
 .card> img{
   display: block;
   object-fit: cover;
+  height: 175px;
   width: 300px;
   max-width: 100%;
-  aspect-ratio: 16 / 9;
   border-radius: .5rem;
 
 
 }
 .card > *:not(img:first-child) {
-  margin-inline: var(--size-200);
+  margin-inline: var(--size-100);
 }
 
 .card > *:not(:first-child) {
-  margin-block-start: var(--size-200);
+  margin-block-start: var(--size-100);
 }
 
 .secondary-button{
@@ -271,6 +271,10 @@ border: 0;}
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+
 
   
 }
@@ -414,7 +418,6 @@ padding: var(--size-200);
     }
   
     .card> img{
-      aspect-ratio: 16/11;
     }
     
 
@@ -460,7 +463,6 @@ flex-direction: column;
 }
 .card> img{
       display: block;
-  aspect-ratio: 16 / 8;
 
 }
 
