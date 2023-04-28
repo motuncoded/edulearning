@@ -6,22 +6,20 @@ const Resources = () => {
     <div className='padding-block-700'>
       <div className="container bg-primary-100">
         <div className="resources">
-          <div className="sidebar">
-            <Link to="/books">Books</Link>
-            <Link to="/blogs">Blogs</Link>
+          <ul className="sidebar">
+            <li><Link to="/books">Books</Link></li>
+            <li><Link to="/books">Books</Link></li>
+            <li><Link to="/books">Books</Link></li>
+            <li><Link to="/books">Books</Link></li>
+            <li><Link to="/books">Books</Link></li>
 
-            <Link to="/checksheets">  Cheetsheets</Link>
-            <Link to="/website">  Websites</Link>
-            <Link to="/books">Books</Link>
-            <Link to="/books">Books</Link>
-            <Link to="/books">Books</Link>
-            <Link to="/books">Books</Link>
+            
+         
+           
 
 
-          </div>
-          <div className="resource"></div>
+          </ul>
         </div>
-        <div className="columns"></div>
       </div>
 
     </div>
