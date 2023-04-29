@@ -311,7 +311,7 @@ border: 0;}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80px;
+  height:75px;
 }
 .contact{
   display: grid;
@@ -344,19 +344,19 @@ padding: 0.75rem;
 
 .resources{
   display: grid;
-  height: 80vh;
-  background-color: var(--clr-primary-100);
-
   grid-template-columns: minmax(12rem, 20%) 1fr; 
 }
 .sidebar{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
   color: var(--clr-neutral-900);
+  border-bottom: 1px solid gray;
 
+}
+.sidebar >li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 .sidebar > a{
   padding: .5rem;
