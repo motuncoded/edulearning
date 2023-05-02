@@ -1,27 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Resources = () => {
+  
+  const tabs = [
+    {
+      "id": 1,
+      "tabsTitle": "Books"
+    },
+    {
+      "id": 2,
+      "tabsTitle": "Website"
+    }, {
+      "id": 3,
+      "tabsTitle": "Cheatsheets"
+    }, {
+      "id": 4,
+      "tabsTitle": "Tools"
+    }
+  ]
+
+
+
   return (
     <div className='padding-block-700'>
-      <div className="container bg-primary-100">
+      <div className="container">
         <div className="resources">
-          <ul className="sidebar">
-            <li><Link to="/books">Books</Link></li>
-            <li><Link to="/books">Books</Link></li>
-            <li><Link to="/books">Books</Link></li>
-            <li><Link to="/books">Books</Link></li>
-            <li><Link to="/books">Books</Link></li>
+         {tabs.map((tab, index)=>(
+                        <div className='tabs' key={index}>
+                          <button>{tab.tabsTitle}</button>
+                        </div>
 
-            
-         
-           
-
-
-          </ul>
-        </div>
+         )
+         )
+      
+         }
       </div>
-
+</div>
     </div>
   )
 }

@@ -10,7 +10,7 @@ export const Navbar = () => {
   }
     const location = useLocation(); 
   return (
-    <header className='navbar container'>
+    <header className='navbar '>
       <div className='logo'>
 <GiOpenBook className='icon-nav' size={20}/>
 <h1 className='fs-700'>Edulearning</h1>  
@@ -32,7 +32,6 @@ export const Navbar = () => {
 				)}
         </div>
         </nav>
-     
         </header>
   )
 }

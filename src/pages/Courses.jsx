@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import c1 from "../assests/logo-2.png";
-import Card from '../components/Card';
 import Search from '../components/Search';
 
 
@@ -18,9 +17,6 @@ function Courses() {
     <section className='container  padding-block-900'>
     <div className="">
         <Search/>
-        <div className='course-container padding-block-700'>
-<Card/>
-      </div>
       </div>
     </section>
   )
