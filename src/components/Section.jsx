@@ -6,12 +6,12 @@ import { FaChalkboardTeacher, FaRegThumbsUp, FaRegUserCircle } from "react-icons
 const Section = () => {
   return (
     <section className='padding-block-900 '>
-      <div className='container bg-neutral-400 ' >
+      <div className='container bg-primary-100 ' >
         <div className='columns values'>
       <div className=''>
-        <h4 className=' text-neutral-100 fw-bold fs-secondary-heading '>We add values to our students journey</h4>
+        <h4 className=' fw-bold fs-secondary-heading '>We add values to our students journey</h4>
         </div>
-        <div className=' text-neutral-100 padding-block-300'>
+        <div className=' padding-block-300'>
           <Article icon={<FaRegUserCircle/>} heading="Easy Registration" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           <Article icon={<GrPersonalComputer/>} heading="Online Classes" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           <Article  icon={<FaChalkboardTeacher/>} heading="Expert tutors" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam," />

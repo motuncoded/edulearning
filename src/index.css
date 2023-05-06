@@ -1,5 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/clash-display');
-  
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
 :root{
   --clr-neutral-900: hsl(0,0%, 0%);
   --clr-neutral-100:hsl(0,0%,100%);
@@ -19,13 +18,16 @@
  --fs-300: .875rem;
  --fs-400:.9375rem;
  --fs-500:1rem;
- --fs-600:1.875rem;
- --fs-700:2rem;
- --fs-800:2.5rem;
- --fs-900:3.5rem;
+ --fs-600:1.475rem;
+--fs-700:1.875rem;
+ --fs-800:2rem;
+ --fs-900:2.5rem;
+ --fs-1000:3.5rem;
  --fs-body:var(--fs-400);
- --fs-primary-heading:var(--fs-800);
+ --fs-primary-heading:var(--fs-900);
  --fs-secondary-heading:var(--fs-700);
+ --fs-tertiary-heading:var(--fs-600);
+
  --fs-nav:var(--fs-600);
  --fs-button:var(--fs-300);
  --size-100:.25rem;
@@ -180,6 +182,11 @@ textarea, select{
   line-height: 1.2;
 
 }
+.fs-tertiary-heading{
+  font-size: var(--fs-tertiary-heading);
+  line-height: 1.2;
+
+}
 .fs-200{
   font-size: var(--fs-200);
 }
@@ -242,6 +249,7 @@ textarea, select{
 }
 /* general styling */
 body{
-  font-size: var(--fs-body);
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Montserrat', sans-serif;  
   color: var(--clr-neutral-900);
 }

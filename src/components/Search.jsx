@@ -5,7 +5,17 @@ import React, { useState } from 'react'
  import courseData from "../data/db.json"
  const Search = () => {
   const [search, setSearch] = useState('');
-
+  const handleSearch = (e) =>{
+  
+    setSearch(e.target.value.toLowerCase())
+   
+  }
+  const filteredItems = courseData.filter((list) => {
+    return search === null ? list
+      :list.name.toLowerCase().includes(search)  || list.tag.toLocaleLowerCase().includes(search);
+    
+    })
+ const itemsDisplay =search ? filteredItems : courseData
 
   return (
     <section>
@@ -14,18 +24,15 @@ import React, { useState } from 'react'
       <form className='search-container'   >
         <div className='search'>
       <BsSearch size={18} className="search-icon"/>
-        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} name="" id=""className='search-input' />
+        <input type="text" value={search} onChange={handleSearch} name="" id=""className='search-input' />
         </div>
-        <button  className="search-button" onClick={(e) => setSearch(e.target.value)}>Search</button>
+        <button  className="search-button" onClick={handleSearch}>Search</button>
       </form>
       </div>
  <div className='course-container padding-block-700'>
  <>
- {courseData.filter((list) => {
-                return search === ''
-                  ? list
-                  : list.name.toLowerCase().includes(search.toLowerCase());
-              }).map((list)=>(
+ {search && filteredItems.length === 0 && (<div className='columns fs-tertiary-heading'>The course is not available</div>)}
+ {itemsDisplay.map((list)=>(
     <div key={list.id} className='card bg-secondary-100  text-neutral-400'>
       <img src={require("../assests/" + list.icon)} width="200px" alt="img-fluid"/>     
 <p className='cardTitle'>{list.name}</p>
