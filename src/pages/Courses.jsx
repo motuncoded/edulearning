@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import c1 from "../assests/logo-2.png";
 import Search from '../components/Search';
+import { Outlet } from 'react-router-dom';
 
 
 function Courses() {
@@ -17,6 +18,7 @@ function Courses() {
     <section className='container  padding-block-900'>
     <div className="">
         <Search/>
+        <Outlet/>
       </div>
     </section>
   )

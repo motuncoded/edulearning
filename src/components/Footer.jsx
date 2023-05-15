@@ -23,7 +23,7 @@ const Footer = () => {
 <div>
   <nav className='footer-navigation'>
     <ul  aria-label="Footer" role="list" className='columns'>
-       <li> <Link className={location.pathname === "/" ? "activeClass" : "inactiveClass" } to="/">Take a Tour</Link></li>
+       <li> <Link className={location.pathname === "/" ? "activeClass" : "inactiveClass" } to="/">Home</Link></li>
        <li> <Link className={location.pathname === "/courses" ? "activeClass" : "inactiveClass" } to="courses">Courses</Link></li>
         <li><Link className={location.pathname === "/services" ? "activeClass" : "inactiveClass" } to="services">Services</Link></li>
         <li><Link className={location.pathname === "/testimonial" ? "activeClass" : "inactiveClass" } to="testimonial">Testimonial</Link></li>

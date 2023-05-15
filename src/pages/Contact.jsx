@@ -30,7 +30,7 @@ const Contact = () => {
 									<input type='email' name='' id='' />
 								</div>
 								<div className='send'>
-									<button className='button '>Send</button>
+									<button className='button'>Send</button>
 								</div>
 							</form>
 						</div>

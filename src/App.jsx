@@ -6,6 +6,10 @@ import Courses from './pages/Courses';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Resources from './pages/Resources';
+import Books from './components/Books';
+import Errorpage from './components/Errorpage';
+import Websites from './components/Websites';
+import Tools from "./components/Tools"
 
 function App() {
   return (
@@ -15,11 +19,19 @@ function App() {
 
      <Routes>
       <Route index path="/" element={<Home/>} />
-      <Route path="resources" element={<Resources/>}/>
-      <Route path="courses" element={<Courses/>}/>
+      <Route path="resources">
+      <Route  index element={<Courses/>}/>
+        <Route path="/resources/books" element={<Books/>}/>
+        <Route path="/resources/courses" element={<Courses/>}/>
 
+        <Route path="/resources/tools" element={<Tools/>}/>
+        <Route path="/resources/websites" element={<Websites/>}/>
+
+      </Route>
       <Route path="blog" element={<Blog/>}/>
       <Route path="contact" element={<Contact/>}/>
+      <Route path="*" element={<Errorpage/>}/>
+
 
      </Routes>
     </div>

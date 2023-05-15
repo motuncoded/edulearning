@@ -24,9 +24,9 @@ import React, { useState } from 'react'
       <form className='search-container'   >
         <div className='search'>
       <BsSearch size={18} className="search-icon"/>
-        <input type="text" value={search} onChange={handleSearch} name="" id=""className='search-input' />
+        <input aria-label="Search courses" type="search" value={search} onChange={handleSearch} name="" id=""className='search-input' />
         </div>
-        <button  className="search-button" onClick={handleSearch}>Search</button>
+        <button type='submit' className="search-button" onClick={handleSearch}>Search</button>
       </form>
       </div>
  <div className='course-container padding-block-700'>
@@ -34,10 +34,10 @@ import React, { useState } from 'react'
  {search && filteredItems.length === 0 && (<div className='columns fs-tertiary-heading'>The course is not available</div>)}
  {itemsDisplay.map((list)=>(
     <div key={list.id} className='card bg-secondary-100  text-neutral-400'>
-      <img src={"../assests/" + list.icon} width="200px" alt="img-fluid"/>     
+      <img src={list.icon} width="200px" alt="img-fluid"/>     
 <p className='cardTitle'>{list.name}</p>
 <div className='flex'>
-<button className='secondary-button cardButton'><a href={list.web} target='_new'>Start now</a></button>
+<button type='submit' className='secondary-button cardButton'><a href={list.web} target='_new'>Start now</a></button>
     </div></div>
 ))}
     </>      </div>    </div>

@@ -1,10 +1,11 @@
+
  [    
         {
             "id": 0,
             "tag":"Technology",
             "name":"Learn Vite - Frontend Build Tool Course",
             "web":"https://www.youtube.com/watch?v=VAeRhmpcWEQ",
-            "icon":"vite-2.jpg"
+            "icon":"../assests/vite-2.jpg"
         },
         {
             "id": 1,
@@ -12,7 +13,7 @@
             "tag":"Technology",
 
             "web":"https://www.youtube.com/watch?v=OXGznpKZ_sA",
-            "icon":"css.jpg"
+            "icon":"../assets/css.jpg"
 
         },  
         {
@@ -20,7 +21,7 @@
             "tag":"Technology",
             "name":"Harvard CS50 - Full Computer Science University Course",
             "web":"https://www.youtube.com/watch?v=8mAITcNt710",
-            "icon":"cs502.png"
+            "icon":"../assets/cs502.png"
 
         }, 
         {
