@@ -2,7 +2,7 @@ import React, { useState } from 'react'
  import {BsSearch} from "react-icons/bs"
  import Card from '../components/Card';
 
- import courseData from "../data/db.json"
+ import courseData from "../data/Data"
  const Search = () => {
   const [search, setSearch] = useState('');
   const handleSearch = (e) =>{

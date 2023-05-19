@@ -25,17 +25,19 @@ export const Navbar = () => {
     <ul className={isOpen ? 'nav-wrapper active' : 'nav-wrapper'} >
        <li> <Link className={location.pathname === "/" ? "activeClass" : "inactiveClass" } to="/">Home</Link></li>
       
-        <li><Link  className={location.pathname === "/resources" ? "activeClass inline-flex " : "inactiveClass " } to="resources">Resources </Link>    {dropdown ? (<RiArrowDropUpLine onClick={toggleDrop}  size={20}   aria-haspopup="menu"/>)
+        <li><Link id="dropdown"  className={location.pathname === "/resources" ? "activeClass inline-flex " : "inactiveClass " } to="resources">Resources </Link>  
+          {dropdown ? (<RiArrowDropUpLine onClick={toggleDrop}  size={20}   aria-haspopup="menu"/>)
             : (<RiArrowDropDownLine size={20} onClick={toggleDrop}   aria-haspopup="menu"/>) }
-          </li>
-            {dropdown ? 
+          
+          {dropdown ? 
             (<ul className="dropdown">
             {menuItems.map((submenu, index) => (
               <li key={index} className="menu-items">
-                <Link className={location.pathname === "/resources/courses" ? "activeClass" : "inactiveClass"} to={submenu.url}>{submenu.title}</Link>
+                <Link className={location.pathname === "/resources/courses" ? "" : ""} to={submenu.url}>{submenu.title}</Link>
               </li>
             ))}
-          </ul>) : null}
+          </ul>) : null}</li>
+          
         <li>
           <Link className={location.pathname === "/blog" ? "activeClass" : "inactiveClass" } to="blog">Blog</Link></li>
         <li><Link className={location.pathname === "/contact" ? "activeClass" : "inactiveClass" } to="contact">Contact</Link></li>

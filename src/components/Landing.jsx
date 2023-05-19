@@ -1,5 +1,5 @@
 import React from 'react'
-import image from "../assests/10088.jpg";
+import image from "../images/10088.jpg";
 
 const Landing = () => {
   return (

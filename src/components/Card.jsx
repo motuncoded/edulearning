@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import courseData from "../data/db.json"
+import courseData from "../data/Data"
 const Card = ({search}) => {
   
 

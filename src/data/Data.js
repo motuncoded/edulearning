@@ -1,11 +1,15 @@
+   import css from "../images/css.jpg"
+   import vitejs from "../images/vitejs.png"
 
- [    
+
+
+ const Data =  [   
         {
             "id": 0,
             "tag":"Technology",
             "name":"Learn Vite - Frontend Build Tool Course",
             "web":"https://www.youtube.com/watch?v=VAeRhmpcWEQ",
-            "icon":"../assests/vite-2.jpg"
+            "icon":vitejs
         },
         {
             "id": 1,
@@ -13,7 +17,7 @@
             "tag":"Technology",
 
             "web":"https://www.youtube.com/watch?v=OXGznpKZ_sA",
-            "icon":"../assets/css.jpg"
+            "icon":css
 
         },  
         {
@@ -239,3 +243,4 @@
 
         } 
         ]
+        export default Data;
