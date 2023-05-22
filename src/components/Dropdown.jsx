@@ -1,21 +1,35 @@
-import menuItems from "../components/MenuItem.jsx"
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { MenuItems } from "./MenuItem";
 
+function Dropdown() {
+  const [click, setClick] = useState(false);
 
+  const handleClick = () => setClick(!click);
 
-const Dropdown = () => {
-  const location = useLocation(); 
-
-
-    return (
-      <ul className="dropdown">
-        {menuItems.map((submenu, index) => (
-          <li key={index} className="menu-items">
-            <Link className={location.pathname === "/resources/courses" ? "activeClass" : "inactiveClass"} to={submenu.url}>{submenu.title}</Link>
-          </li>
-        ))}
+  return (
+    <>
+      <ul
+    
+           onClick={handleClick}
+           className={click ? 'dropdown-menu active' : 'dropdown-menu'}
+      >
+        {MenuItems.map((item) => {
+          return (
+            <li key={item.id}>
+              <Link
+                to={item.path}
+                className="dropmenu-link"
+                onClick={() => setClick(false)}
+              >
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-    );
-  };
-  
-  export default Dropdown;
+    </>
+  );
+}
+
+export default Dropdown;
