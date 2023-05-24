@@ -23,7 +23,8 @@
 
 /*landing*/
 .navbar {
-	background-color: #fff;
+	background-color: var(--clr-neutral-900);
+	color: var(--clr-neutral-100);
 	position: sticky;
 	top: 0;
 	z-index: 1;
@@ -35,9 +36,10 @@
 
 .logo {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	padding: var(--size-400);
+		padding: var(--size-400);
+
 
 }
 .logo > a {
@@ -50,28 +52,27 @@
 }
 .nav-wrapper {
 	display: flex;
-
+	justify-content: center;
+	align-items: center;
 
 }
 
 
 .nav-wrapper> li{
 	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-text-align: left;
-	padding: var(--size-400);
+	padding: var(--size-500);
+	
+
 
 }
 
 
-
+.dropdown-icon{
+	color: var(--clr-neutral-100);
+}
 
 .primary-navigation {
-	display: flex;
-	padding: 1rem;
+display: flex;
 }
 .activeClass {
 	font-weight: 500;
@@ -82,7 +83,7 @@ text-align: left;
 	font-weight: 500;
 	opacity: 1;
 	color: var(--clr-neutral-900);
-	border-bottom: 3px solid var(--clr-neutral-100);
+	border-bottom: 3px solid var(--clr-neutral-900);
 
 }
 .icon {
@@ -90,18 +91,28 @@ text-align: left;
 
 }
 .toggle {
+	padding: var(--size-400);
 	cursor: pointer;
-	padding: 1em;
 }
 .dropdown-menu {
-	padding: var(--size-300);
-text-align: start;
+background-color: var(--clr-neutral-900);
 position: absolute;
-height: 200px;
-top: 30px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+width: 200px;
+height: 210px;
+top: 70px;
 
 
   
+}
+.dropdown-icon:hover{
+	padding-top: .25rem;
+	transition: all .3s ease-in-out;
+}
+.dropdown-menu:before{
+
 }
 .dropdown-button{
 	position: absolute;
@@ -112,7 +123,7 @@ top: 30px;
 
 
 .dropdown-menu >li{
-	padding: var(--size-400);
+	padding: var(--size-300);
 	cursor: pointer;
 	text-align: center;
 
@@ -120,6 +131,12 @@ top: 30px;
 
 	
 }
+.dropdown-menu > li:hover{
+	background-color: var(--clr-primary-400);
+	color:var(--clr-neutral-100)
+	
+}
+
 	
 
 
@@ -152,8 +169,7 @@ top: 30px;
 	display: none;
 }
 .icon-nav {
-	margin: 0.5rem 0.3rem;
-	background-color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-900);
 	color: var(--clr-primary-400);
 }
 .iconA {
@@ -545,13 +561,17 @@ align-items: center;
 	}
 	.nav-wrapper> li> {
 		position: relative;
-		text-align: start;
+		text-align: start;	
+		padding: var(--size-300);
+
 	
 	}
 	.dropdown-menu{
 		position: relative;
 		top:0;
 	}.dropdown-menu li{
+		padding: var(--size-300);
+
 }
 	
 

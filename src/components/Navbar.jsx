@@ -23,19 +23,17 @@ export const Navbar = () => {
   const toggleDrop = () =>{
     setDropdown(!dropdown)
   }
-  const handleClickAway= ()=>{
-    setOpen(false)
-  }
+  
   const closeMobileMenu = () => setClick(false);
   
   return (
-    <header className='navbar ' onClick={handleClickAway}>
+    <header className='navbar ' >
       <div className='logo '>
-      <GiOpenBook className='icon-nav' size={20}/>
+      <GiOpenBook className='icon-nav' size={25}/>
 
 <NavLink >Edu<span>learning</span></NavLink>  
 </div> 
-  <nav>
+  <nav className='primary-navigation'>
     <ul className={isOpen ? 'nav-wrapper active' : 'nav-wrapper'} >
          
               <li className='nav-item' > 
@@ -47,8 +45,8 @@ export const Navbar = () => {
                   <NavLink  onClick={closeMobileMenu} className={({isActive})=> isActive ? "activeClass " : "inActiveClass"} to="/resources">Resources
                 </NavLink>
                 <button className='dropdown-button'>
-                {dropdown ? (<RiArrowDropUpLine onClick={toggleDrop}  size={20}    aria-haspopup="menu"/>)
-            : (<RiArrowDropDownLine onClick={toggleDrop} size={20} aria-haspopup="menu"/>) }</button>
+                {dropdown ? (<RiArrowDropUpLine onClick={toggleDrop} className='dropdown-icon'  size={25}    aria-haspopup="menu"/>)
+            : (<RiArrowDropDownLine onClick={toggleDrop} size={25} className='dropdown-icon'  aria-haspopup="menu"/>) }</button>
 </div>
                 
             
