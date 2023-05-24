@@ -23,10 +23,13 @@ export const Navbar = () => {
   const toggleDrop = () =>{
     setDropdown(!dropdown)
   }
+  const handleClickAway= ()=>{
+    setOpen(false)
+  }
   const closeMobileMenu = () => setClick(false);
   
   return (
-    <header className='navbar '>
+    <header className='navbar ' onClick={handleClickAway}>
       <div className='logo '>
       <GiOpenBook className='icon-nav' size={20}/>
 
