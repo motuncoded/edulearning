@@ -31,7 +31,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 70px;
+	height: 72.5px;
 }
 
 .logo {
@@ -98,19 +98,17 @@ display: flex;
 background-color: var(--clr-neutral-900);
 position: absolute;
 display: flex;
-justify-content: center;
+justify-self: flex-start;
 flex-direction: column;
-width: 200px;
-height: 210px;
+width: 100px;
+height: 175px;
 top: 70px;
+left: 22.5px;
 
 
   
 }
-.dropdown-icon:hover{
-	padding-top: .25rem;
-	transition: all .3s ease-in-out;
-}
+
 .dropdown-menu:before{
 
 }
@@ -125,15 +123,18 @@ top: 70px;
 .dropdown-menu >li{
 	padding: var(--size-300);
 	cursor: pointer;
-	text-align: center;
 
 
 
 	
 }
-.dropdown-menu > li:hover{
+.dropdown-menu>li>a{
+	
+}
+.dropdown-menu > li> a:hover{
 	background-color: var(--clr-primary-400);
-	color:var(--clr-neutral-100)
+	color:var(--clr-neutral-100);
+
 	
 }
 
@@ -527,49 +528,60 @@ line-height: 1;
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			height: 90vh;
+			height: calc((100vh - 65px));
 			position: absolute;
-			top: 80px;
+			top: 65px;
 			left: -100%;
-			opacity: 1;
-			transition: all 0.5s ease;
 		  
 	}
 
 	.icon {
 		display: block;
 	}
+
 	
 
 	.nav-wrapper.active {
-		top: 100%;
+		position: absolute;
 		left: 0;
-		margin:.25rem auto;
 		display: flex;
 align-items: center;
 		flex-direction: column;
-		background-color: #fff;
+		background-color: var(--clr-neutral-100);
 		color: var(--clr-neutral-400);
+				padding: var(--size-300);
+
 		width: 100%;
-		padding: var(--size-700);
-		border-radius: var(--size-100);
-		height: 500px;
-		position: absolute;
-		opacity: 1;
-		transition: all 0.5s ease;
-		z-index: 1;
 	}
-	.nav-wrapper> li> {
+	.nav-wrapper> li{
 		position: relative;
 		text-align: start;	
-		padding: var(--size-300);
+		padding: var(--size-400);
 
 	
 	}
+	.nav-wrapper>li:nth-child(2){
+		position: relative;
+
+	}
+	.activeClass, .inActiveClass{
+		border: none;
+	}
+	.dropdown-icon{
+		color: var(--clr-neutral-900);
+	}
 	.dropdown-menu{
 		position: relative;
-		top:0;
-	}.dropdown-menu li{
+		display: flex;
+		justify-content: center;
+		background-color: var(--clr-neutral-100);
+		top:20px;
+		height: 180px;
+	}.dropdown-menu.active{
+		left: -60px;
+
+	}
+	.dropdown-menu li{
 		padding: var(--size-300);
 
 }
