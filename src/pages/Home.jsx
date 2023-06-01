@@ -5,6 +5,7 @@ import Landing from '../components/Landing'
 import Section from '../components/Section'
 import SectionTwo from '../components/SectionTwo'
 import Testimonial from '../components/Testimonial'
+import Carousel from '../components/Carousel';
 
 function Home() {
   return (
@@ -12,8 +13,7 @@ function Home() {
 <Landing/>
 <HeaderContent />
 <Section/>
-<SectionTwo/>
-<Testimonial/>
+<Carousel/>
 <Footer/>   
  </div>
   )

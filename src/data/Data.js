@@ -1,5 +1,11 @@
    import css from "../images/css.jpg"
    import vitejs from "../images/vitejs.png"
+   import cs502  from "../images/cs502.png"
+  import machinelearning from "../images/machine-learning.jpg"
+  import ChatGPTLogo from "../images/ChatGPT-Logo.jpg"
+  import  figma from "../images/figma.png"
+  
+
 
 
 
@@ -25,7 +31,7 @@
             "tag":"Technology",
             "name":"Harvard CS50 - Full Computer Science University Course",
             "web":"https://www.youtube.com/watch?v=8mAITcNt710",
-            "icon":"../assets/cs502.png"
+            "icon":cs502
 
         }, 
         {
@@ -34,7 +40,7 @@
 
             "name":"Microsoft Excel Tutorial for Beginners",
             "web":"https://www.youtube.com/watch?v=Vl0H-qTclOg",
-            "icon":"machine-learning.jpg"
+            "icon":machinelearning
 
         },
         {
@@ -43,7 +49,7 @@
 
             "name":"ChatGPT Course – Use The OpenAI API to Code 5 Projects",
             "web":"https://m.youtube.com/watch?v=uRQH2CFvedY",
-            "icon":"ChatGPT-Logo.jpg"
+            "icon":ChatGPTLogo
 
         },  
         {
@@ -52,7 +58,7 @@
 
             "name":"Figma Tutorial for UI Design",
             "web":"https://www.youtube.com/watch?v=jwCmIBJ8Jtc&t=30677s",
-            "icon":"figma.png"
+            "icon":figma
 
         },   {
             "id": 6,

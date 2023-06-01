@@ -2,10 +2,9 @@ import './App.css';
 import { Navbar } from './components/Navbar';
 import Home from './pages/Home';
 import {Routes,Route} from "react-router-dom"
-import Courses from './pages/Courses';
+import Courses from './components/Courses';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-import Resources from './pages/Resources';
 import Books from './components/Books';
 import Errorpage from './components/Errorpage';
 import Websites from './components/Websites';

@@ -1,46 +1,63 @@
 import React from 'react'
-import {Link, useLocation} from "react-router-dom";
+import {NavLink, useLocation,Link} from "react-router-dom";
 import { GiOpenBook } from 'react-icons/gi';
+import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle, AiFillYoutube } from 'react-icons/ai';
+import { RiArrowRightLine, RiFacebookCircleFill, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiPinterestFill, RiPinterestLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri';
 
 const Footer = () => {
     const location = useLocation(); 
 
   return (
   
-    <div className='padding-block-400'>
- <div  className='container footer'>
-  <div className='columns'>
-<div>
-<GiOpenBook className='icon-nav' size={20}/>
-  <ul role="list" aria-label='social link'>
-    <li><a aria-label='facebook' href="#">Facebook</a></li>
-    <li><a  aria-label='twitter' href="#">Twitter</a> </li>
-    <li><a  aria-label='youtube' href="#">Youtube</a> </li>
-    <li><a  aria-label='pinterest' href="#">Pinterest</a> </li>
-    <li><a  aria-label='instragram' href="#">Instragram</a> </li>
+    <footer className=' '>
+ <div  className='container'>
+  <div className='footer-container '>
+    <div className='footer-wrapper'>
+    <div className='footer-logo'>
+      <GiOpenBook className='icon-nav' size={20}/>
+
+<NavLink to="/" >Edu<span>learning</span></NavLink>  
+</div> 
+<ul role="list" className='social-link' aria-label='social link'>
+    <li><a aria-label='facebook'  href="#"><RiFacebookFill size={25}/></a></li>
+    <li><a  aria-label='twitter' href="#"><RiTwitterFill size={25}/></a> </li>
+    <li><a  aria-label='youtube' href="#"><RiYoutubeFill size={25}/></a> </li>
+    <li><a  aria-label='pinterest' href="#"><RiPinterestFill size={25}/></a> </li>
+    <li><a  aria-label='instragram'href="#"><RiInstagramFill size={25}/></a> </li>
   </ul>
-</div>
-<div>
+
+
+  </div>
+  <div className='footer-nav'>
   <nav className='footer-navigation'>
-    <ul  aria-label="Footer" role="list" className='columns'>
-       <li> <Link className={location.pathname === "/" ? "activeClass" : "inactiveClass" } to="/">Home</Link></li>
-       <li> <Link className={location.pathname === "/courses" ? "activeClass" : "inactiveClass" } to="courses">Courses</Link></li>
-        <li><Link className={location.pathname === "/services" ? "activeClass" : "inactiveClass" } to="services">Services</Link></li>
-        <li><Link className={location.pathname === "/testimonial" ? "activeClass" : "inactiveClass" } to="testimonial">Testimonial</Link></li>
-        <li><Link className={location.pathname === "/contact" ? "activeClass" : "inactiveClass" } to="contact">Contact</Link></li>
+    <ul className='footer-links' aria-label="Footer" role="list">
+       <li className="fw-bold">Explore</li>
+        <li><Link className={location.pathname === "/services" ? "" : "inactiveClass" } to="about">About</Link></li>
+        <li><Link className={location.pathname === "/services" ? "" : "inactiveClass" } to="about">About</Link></li>
+        <li><Link className={location.pathname === "/services" ? "" : "inactiveClass" } to="about">About</Link></li>
+ <li><Link className={location.pathname === "/contact" ? "" : "inactiveClass" } to="contact">Contact</Link></li>
+       
+       
         </ul>
         </nav>
         </div>
+<div className='footer-form'>
+<p>Subscribe to our newsletter</p>
+
+        <form>
+          <input type='email' placeholder='Enter your email address'/>
+          <button className='subscribe-button'><RiArrowRightLine/></button>
+        </form>
+        
+
         </div>
-        <div>
-          <form action="">
-            <input type="email" name="" id="" />
-            <button>Subscribe</button>
-            <p>Copyright 2023. All rights Reserved  </p>
-          </form>
-      </div>
-</div>
-    </div>
+</div> 
+        <p className='flex padding-block-500'>Copyright 2023. All Rights Reserved</p>
+
+</div>  
+
+</footer>  
+    
   )
 }
 
