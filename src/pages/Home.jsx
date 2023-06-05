@@ -4,7 +4,7 @@ import HeaderContent from '../components/HeaderContent'
 import Landing from '../components/Landing'
 import Section from '../components/Section'
 import SectionTwo from '../components/SectionTwo'
-import Testimonial from '../components/Testimonial'
+import Subscribe from "../components/Subscribe"
 import Carousel from '../components/Carousel';
 
 function Home() {
@@ -14,6 +14,8 @@ function Home() {
 <HeaderContent />
 <Section/>
 <Carousel/>
+<SectionTwo/>
+<Subscribe/>
 <Footer/>   
  </div>
   )

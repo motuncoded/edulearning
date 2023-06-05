@@ -1,8 +1,13 @@
 import React from 'react'
+import { BooksSearch } from './BooksSearch'
 
 const Books = () => {
   return (
-    <div>Books</div>
+    <section className='container padding-block-900'>
+    <div className="">
+        <BooksSearch/>
+      </div>
+    </section>
   )
 }
 

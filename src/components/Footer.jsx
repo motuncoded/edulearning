@@ -41,16 +41,7 @@ const Footer = () => {
         </ul>
         </nav>
         </div>
-<div className='footer-form'>
-<p>Subscribe to our newsletter</p>
 
-        <form>
-          <input type='email' placeholder='Enter your email address'/>
-          <button className='subscribe-button'><RiArrowRightLine/></button>
-        </form>
-        
-
-        </div>
 </div> 
         <p className='flex padding-block-500'>Copyright 2023. All Rights Reserved</p>
 

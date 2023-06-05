@@ -6,18 +6,18 @@ import { FaChalkboardTeacher, FaRegThumbsUp, FaRegUserCircle } from "react-icons
 import { RiComputerFill } from 'react-icons/ri'
 const Section = () => {
   return (
-    <section className='padding-block-700 bg-neutral-900 text-neutral-100 '>
+    <section className='padding-block-900 bg-neutral-900 text-neutral-100 '>
       <div className='container ' >
         <div className=' '>
-      <div className=''>
+      <div className='flex'>
         <p className=' fs-primary-heading '>We add values to our students.</p>
         </div>
-        <div className='values padding-block-500'>
-          <div>
+        <div className='values '>
+          <div className=' padding-block-500 '>
           <Article icon={<FaRegUserCircle/>} heading="Easy Registration" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           <Article icon={<RiComputerFill/>} heading="Virtual Classes" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           </div>
-          <div>
+          <div className='padding-block-500 '>
           <Article  icon={<FaChalkboardTeacher/>} heading="Expert tutors" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam," />
          <Article  icon={<FaRegThumbsUp/>} heading="" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
          </div>

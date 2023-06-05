@@ -27,7 +27,8 @@ export const Navbar = () => {
   const closeMobileMenu = () => setClick(false);
   
   return (
-    <header className='navbar ' >
+    <header className=' bg-neutral-900 text-neutral-100 ' >
+      <div  className='container navbar'>
       <div className='logo '>
       <GiOpenBook className='icon-nav' size={25}/>
 
@@ -36,9 +37,7 @@ export const Navbar = () => {
   <nav className='primary-navigation'>
     <ul className={isOpen ? 'nav-wrapper active' : 'nav-wrapper'} >
          
-              <li className='nav-item' > 
-              
-                <NavLink onClick={closeMobileMenu} className={({isActive})=> isActive ? "activeClass" : "inActiveClass"} to="/">Home</NavLink>
+              <li className='nav-item' > <NavLink onClick={closeMobileMenu} className={({isActive})=> isActive ? "activeClass" : "inActiveClass"} to="/">Home</NavLink>
               </li>
               <li className='nav-item'  >
                 <div>
@@ -86,6 +85,7 @@ export const Navbar = () => {
 				)}
         </div>
         </nav>
+        </div>
         </header>
   )
 }

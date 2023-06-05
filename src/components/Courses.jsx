@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Search from '../components/Search';
+import CoursesSearch from './CoursesSearch';
 import { Outlet } from 'react-router-dom';
 
 
@@ -16,7 +16,7 @@ function Courses() {
   return (
     <section className='container  padding-block-900'>
     <div className="">
-        <Search/>
+        <CoursesSearch/>
         <Outlet/>
       </div>
     </section>

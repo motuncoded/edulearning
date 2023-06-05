@@ -3,7 +3,7 @@ import Content from './Content'
 
 const HeaderContent = () => {
   return (
-    <section className='padding-block-700'>
+    <section className='padding-block-500'>
     <main className='container'>
       <div className='columns content flex'>
             <h2 className=''>Our number tell us more about us</h2>
