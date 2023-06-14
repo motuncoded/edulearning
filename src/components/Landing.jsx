@@ -13,7 +13,7 @@ const Landing = () => {
            <img src={image}  alt="landing-photo"/>
            </div>
            <div className='flex'>
-                <button className='button '>Get started</button>
+                <button className='button'>Get started</button>
                 </div>
             </div>
            

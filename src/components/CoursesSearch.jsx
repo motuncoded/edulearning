@@ -33,7 +33,7 @@ import React, { useState } from 'react'
  <>
  {search && filteredItems.length === 0 && (<div className='columns fs-tertiary-heading'>The course is not available</div>)}
  {itemsDisplay.map((list)=>(
-    <div key={list.id} className='card bg-secondary-100  text-neutral-400'>
+    <div key={list.id} className='card bg-secondary-100  text-neutral-400 '>
       <img src={list.icon} width="200px" alt="img-fluid"/>     
 <p className='cardTitle'>{list.name}</p>
 <div className='flex'>

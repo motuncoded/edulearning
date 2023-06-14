@@ -6,6 +6,7 @@ import Section from '../components/Section'
 import SectionTwo from '../components/SectionTwo'
 import Subscribe from "../components/Subscribe"
 import Carousel from '../components/Carousel';
+import Categories from '../components/Categories'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
 <Landing/>
 <HeaderContent />
 <Section/>
+<Categories/>
 <Carousel/>
 <SectionTwo/>
 <Subscribe/>

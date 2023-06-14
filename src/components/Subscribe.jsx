@@ -7,12 +7,13 @@ const Subscribe = () => {
           <div className='flex subscribe '>
 <p className='fs-secondary-heading'>Subscribe to our newsletter</p>
 
-        <form className='padding-block-300 '>
+<div className='padding-block-500'>
+        <form className='subscribe-container '>
           <input type='email' placeholder='Enter your email address'/>
           <button className='subscribe-button'>
-            <RiArrowRightLine/></button>
+            <RiArrowRightLine size={25}/></button>
         </form>
-        
+        </div>
 </div>
     </div>
   )
