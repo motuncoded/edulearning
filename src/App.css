@@ -44,8 +44,7 @@ width: 100%;
 left: 0;
 }
 
-.primary-navigation{
-}
+
 .activeClass{
   border-bottom: 3px solid var(--clr-primary-400);
 }
@@ -85,15 +84,13 @@ border: 0;}
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-400);
 }
-.iconA{
+.iconStyle{
 display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 50%;
   width: 30px;
   height: 30px;
-  background-color: #fff;
-  color: #000;
   
 
 }
@@ -153,6 +150,29 @@ padding: 1rem 0;}
   padding: var(--size-400);
  
 }
+.category-title{
+background-image: linear-gradient(120deg, rgb(245, 102, 0) 0%, #004f99 80%);
+background-repeat: no-repeat;
+background-size: 19% .4em;
+background-position: 0 100%;
+line-height: 1.5;
+}
+.category{
+   display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  gap: 2rem;
+}
+.category-courses{
+width: 200px;
+background-color: var(--clr-secondary-100);
+border-radius: .75rem;
+padding: 1rem;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.category-courses:hover{
+  background-color: var(--clr-primary-400);
+  color: var(--clr-secondary-100);
+}
 
 /* Testominal*/
 .testmonial:has(img){
@@ -208,6 +228,7 @@ outline: none;
     color: var(--clr-neutral-100);
     border: 1px solid var(--clr-primary-400);
     background-color:var(--clr-primary-400);
+    font-size: var(--fs-400);
 }
 
 
@@ -287,6 +308,7 @@ text-align: center;
 .card> .search-button{
   position: absolute;
   bottom: 0rem;
+font-size: 1rem;
 }
 /* Contact page */
 
@@ -471,6 +493,10 @@ flex-direction: column;
 }
     
 .course-container{
+
+}
+.category-title{
+background-size: 50% .4em;
 
 }
 

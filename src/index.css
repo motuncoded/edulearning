@@ -3,16 +3,17 @@
   --clr-neutral-900: hsl(0,0%, 0%);
   --clr-neutral-100:hsl(0,0%,100%);
   --clr-neutral-400:hsl(232, 12%, 13%);
-  --clr-primary-400:hsl(25, 100%, 48%);
-  --clr-primary-100:hsl(13, 100%, 96%);
+  --clr-primary-400:#f56600;
+  --clr-primary-100:#ffefeb;
   --clr-secondary-400:hsl(209, 100%, 30%);
-  --clr-secondary-100:hsl(0, 0%, 95%);
- --ff-primary: "clash-display", sans-serif;
+  --clr-secondary-100:hsl(0, 0%, 99%);
+ --ff-primary: "clash-display", system-ui ;
  --fw-regular:400;
  --fw-semi-bold:500;
  --fw-bold:700;
  --ff-bold:var(--ff-primary);
  --ff-heading:var(--ff-primary);
+ --fs-100:.785rem;
  --fs-200:.8125rem;
 
  --fs-300: .875rem;
@@ -89,6 +90,7 @@ html, body{
 body{
   text-rendering: optimizeSpeed;
   line-height: 1.2;
+  
 
 }
 a:not([class]){
@@ -139,11 +141,8 @@ textarea, select{
 .bg-secondary-100{
   background-color: var(--clr-secondary-100);
 }
-.bg-primary-100{
-  background-color:var(--clr-secondary-100) ;
-}
 
-.bg-primary-400{
+.bg-secondary-400{
   background-color: var(--clr-secondary-400);
 }
 .bg-accent-400{
@@ -186,6 +185,9 @@ textarea, select{
   font-size: var(--fs-tertiary-heading);
   line-height: 1.2;
 
+}
+.fs-100{
+  font-size: var(--fs-100);
 }
 .fs-200{
   font-size: var(--fs-200);
