@@ -1,6 +1,4 @@
-import React from "react";
-
-function page() {
+function CategoriesPage() {
   return (
     <div>
       <p>Categories page</p>
@@ -8,4 +6,4 @@ function page() {
   );
 }
 
-export default page;
+export default CategoriesPage;

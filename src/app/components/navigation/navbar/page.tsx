@@ -17,7 +17,8 @@ interface NavItemProps {
   href: string;
   children: ReactNode;
 }
-const NavItem: React.FC<NavItemProps> = ({ href, children }) => {
+
+const NavItem = ({ href, children }: NavItemProps) => {
   const pathname = usePathname();
   const isActive = href === pathname;
   return (
@@ -46,7 +47,7 @@ const NavList = () => (
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
-    setMenu(!menu);
+    setMenu((prevMenu) => !prevMenu);
   };
   return (
     <div className="flex justify-between ">
@@ -58,7 +59,7 @@ export default function Navbar() {
       <div className="sm:hidden ">
         {menu && (
           <div
-            className={` lg:hidden shadow-sm absolute top-[40px] left-0 w-full z-[999] bg-[var(--background-color)] flex flex-col justify-start place-items-start`}
+            className={` lg:hidden absolute top-[40px] left-0 w-full z-[999] bg-[var(--background-color)] flex flex-col justify-start place-items-start`}
             style={{ padding: "16px" }}
           >
             <NavList />
