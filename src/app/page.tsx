@@ -21,6 +21,7 @@ const quotes = [
   },
 ];
 
+
 export default function Home() {
   const [currentQuote, setCurrentQuote] = useState(0);
   const [quote, setQuote] = useState(quotes[currentQuote].quote);
