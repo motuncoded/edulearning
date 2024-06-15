@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import quotes from "./quotes.json";
 
+
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
