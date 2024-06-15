@@ -30,7 +30,7 @@ export default function Home() {
         </button>
       </div>
       <div className="pt-6">
-        <Image src="/learning.png" width={600} height={600} alt="edulearning" />
+        <Image src="/learning.svg" width={600} height={600} alt="edulearning" />
       </div>
     </div>
   );
