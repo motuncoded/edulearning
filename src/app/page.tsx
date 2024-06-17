@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import quotes from "./quotes.json";
+import Offer from "./offer"
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
   }, [currentIndex]);
 
   return (
+    <div>
     <div className="flex justify-center items-center flex-col pt-6">
       <h2 className="text-[3rem]  font-bold max-sm:text-[2.5rem]	text-center max-sm:leading-9	">
         Drive the world through knowledge.
@@ -32,6 +34,10 @@ export default function Home() {
       <div className="pt-6">
         <Image src="/learning.svg" width={600} height={600} alt="edulearning" />
       </div>
+      </div>
+
+    <Offer/>
+
     </div>
   );
 }
