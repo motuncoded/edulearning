@@ -8,15 +8,15 @@ import { MdLibraryBooks } from "react-icons/md";
 
 export default function offer() {
   return (
-    <section className="flex justify-between items-center max-sm:flex-col p-4">
+    <section className="flex justify-between items-center max-sm:flex-col p-4 max-md:flex-col">
       <Image src="/study.svg" width={500} height={500} alt="studying" />
-      <div>
+      <div className="max-md:flex flex-col">
         <h4 className="text-3xl font-bold">
           We offer valuable materials in different formats.
         </h4>
         <div className="flex flex-col ">
           <div className="flex ">
-            <div className="py-4">
+            <div className="py-4 pr-4">
               <GrCatalogOption
                 size="18"
                 className="text-[var(--accent-color)] "
@@ -40,7 +40,7 @@ export default function offer() {
             </div>
           </div>
           <div className="flex">
-            <div className="py-4">
+            <div className="py-4  pr-4">
               <GrResources size="18" className="text-[var(--active-color)]" />
               <h5 className="font-bold"> Resources</h5>
               <h6>

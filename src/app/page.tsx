@@ -16,7 +16,7 @@ export default function Home() {
   }, [currentIndex]);
 
   return (
-    <div>
+    <div className="max-sm:p-4">
       <div className="flex justify-center items-center flex-col pt-6">
         <h2 className="text-[3rem]  font-bold max-sm:text-[2.5rem]	text-center max-sm:leading-9	">
           Drive the world through knowledge.
