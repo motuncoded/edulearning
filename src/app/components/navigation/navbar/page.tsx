@@ -50,7 +50,7 @@ export default function Navbar() {
     setMenu((prevMenu) => !prevMenu);
   };
   return (
-    <div className="flex justify-between ">
+    <div className="flex justify-between max-sm:px-2 ">
       <Logo />
       <div className="hidden sm:flex justify-center items-center">
         <NavList />
