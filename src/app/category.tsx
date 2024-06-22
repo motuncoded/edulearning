@@ -23,7 +23,7 @@ export default function Category() {
         </button>
       </div>
       <div className="max-w-[1000px] w-[calc(100% - 2rem)] m-auto">
-        <div className="grid grid-cols-4 gap-4  ">
+        <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2 ">
           {category.map((cat: Cat, i) => (
             <div
               key={i}
