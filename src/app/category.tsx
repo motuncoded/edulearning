@@ -1,7 +1,7 @@
 import category from "./category.json";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import Link  from "next/link";
 
 type Cat = {
   icon: string;
@@ -9,18 +9,17 @@ type Cat = {
 };
 
 export default function Category() {
-  const router = useRouter();
 
   return (
     <section className="flex flex-col  p-4  ">
       <div className="flex justify-between ">
         <h4 className="text-2xl">Popular categories</h4>
-        <button
+        <Link
           className="flex justify-center items-center p-2 rounded text-black hover:bg-[var(--accent-color)] hover:text-white"
-          onClick={() => router.push("/categories")}
+          href="/categories"
         >
           View All Categories <FaArrowRight />
-        </button>
+        </Link>
       </div>
       <div className="max-w-[1000px] w-[calc(100% - 2rem)] m-auto">
         <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2 ">
