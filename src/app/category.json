@@ -1,0 +1,34 @@
+[
+  {
+    "icon": "/technology.png",
+    "label": "Technology"
+  },
+  {
+    "icon": "/business.png",
+    "label": "Business"
+  },
+  {
+    "icon": "/language.png",
+    "label": "Language"
+  },
+  {
+    "icon": "/artanddesign.png",
+    "label": "Art and Design"
+  },
+  {
+    "icon": "/lifestyle.png",
+    "label": "Lifestyle"
+  },
+  {
+    "icon": "health.svg",
+    "label": "Health and fitness"
+  },
+  {
+    "icon": "/finance.png",
+    "label": "Finance"
+  },
+  {
+    "icon": "music.svg",
+    "label": "Music"
+  }
+]

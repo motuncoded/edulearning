@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import quotes from "./quotes.json";
 import Offer from "./offer";
+import Category from "./category";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,8 +40,8 @@ export default function Home() {
           />
         </div>
       </div>
-
       <Offer />
+      <Category />
     </div>
   );
 }
