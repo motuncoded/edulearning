@@ -8,7 +8,7 @@ import { MdLibraryBooks } from "react-icons/md";
 
 export default function offer() {
   return (
-    <section className="flex justify-between items-center max-sm:flex-col p-4 max-md:flex-col">
+    <section className="flex justify-between items-center max-sm:flex-col p-4 max-md:flex-col max-lg:flex-col max-xl:flex-col">
       <Image src="/study.svg" width={500} height={500} alt="studying" />
       <div className="max-md:flex flex-col">
         <h4 className="text-3xl font-bold">
