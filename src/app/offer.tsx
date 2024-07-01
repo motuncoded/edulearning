@@ -6,11 +6,11 @@ import { GrResources } from "react-icons/gr";
 import { MdLibraryBooks } from "react-icons/md";
 
 type OfferIconProps = {
-  icon: React.ReactElement; // Change this from string to ReactElement
+  icon: React.ReactElement; 
   label: string;
   description: string;
 };
-const OfferIcon: React.FC<OfferIconProps> = ({ icon, label, description }) => (
+const OfferIcon = ({ icon, label, description }: OfferIconProps) => (
   <div className="py-4 pr-4">
     {icon}
     <h5 className="font-bold">{label}</h5>

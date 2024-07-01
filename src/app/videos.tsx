@@ -10,13 +10,13 @@ type CourseCardProps = {
   src: string;
 };
 
-const CourseCard: React.FC<CourseCardProps> = ({
+const CourseCard = ({
   title,
   description,
   chapters,
   duration,
   src,
-}) => {
+}: CourseCardProps) => {
   return (
     <div className="shadow-md w-[325px] h-[375px] border rounded bg-[#FAF9F6] hover:shadow-lg">
       <iframe
