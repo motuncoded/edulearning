@@ -6,7 +6,7 @@ import { GrResources } from "react-icons/gr";
 import { MdLibraryBooks } from "react-icons/md";
 
 type OfferIconProps = {
-  icon: React.ReactElement; 
+  icon: string; 
   label: string;
   description: string;
 };
