@@ -3,7 +3,6 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
-
 type Cat = {
   icon: string;
   label: string;
@@ -16,7 +15,6 @@ export default function Category() {
         <h4 className="text-2xl max-sm:pb-2">Popular categories</h4>
         <Link
           className="flex justify-center items-center p-2 rounded text-black hover:bg-[var(--accent-color)] hover:text-white max-sm:bg-[var(--accent-color)] max-sm:text-white"
-
           href="/categories"
         >
           View All Categories <FaArrowRight />
