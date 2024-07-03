@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Image from "next/image";
 import { GrCatalogOption } from "react-icons/gr";
 import { BiBookContent } from "react-icons/bi";
@@ -6,7 +6,7 @@ import { GrResources } from "react-icons/gr";
 import { MdLibraryBooks } from "react-icons/md";
 
 type OfferIconProps = {
-  icon: string; 
+  icon: ReactElement; 
   label: string;
   description: string;
 };
