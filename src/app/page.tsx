@@ -6,6 +6,7 @@ import quotes from "./quotes.json";
 import Offer from "./offer";
 import Category from "./category";
 import Videos from "./videos";
+import More from "./more";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,6 +45,7 @@ export default function Home() {
       <Offer />
       <Category />
       <Videos />
+      <More />
     </div>
   );
 }
