@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function More() {
   return (
-    <section className="my-4 p-2">
+    <section className="my-4 p-2 relative h-screen">
       <h4 className="text-2xl font-medium">More about Edulearning</h4>
       <p>
         Getting the authetic learning materials from books, videos to podcasts.{" "}
