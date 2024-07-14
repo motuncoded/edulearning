@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "./components/navigation/navbar/page";
 import Footer from "./components/navigation/footer/page";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,7 +23,7 @@ export default function RootLayout({
         <div className="max-w-[1280px] w-[calc(1280px - 1rem)] m-auto">
           <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </div>
       </body>
     </html>
