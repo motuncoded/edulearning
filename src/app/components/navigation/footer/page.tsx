@@ -9,7 +9,7 @@ import {
 import { TbPhoneCall } from "react-icons/tb";
 
 const Logo = () => (
-  <div className="flex flex-col">
+  <div className="flex flex-col pt-4">
     <h4 className="flex items-center">
       <PiBookOpenUserFill
         size="30"
@@ -74,8 +74,11 @@ const Logo = () => (
 
 const Category = () => {
   return (
-    <div className="flex flex-col gap-2">
-      <h4 className="text-[1.38rem] font-bold"> Quick links</h4>
+    <div className="flex flex-col gap-2 mt-4">
+      <h4 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
+        {" "}
+        Quick links
+      </h4>
       <ul className="flex flex-col gap-2">
         <li className="flex gap-2 items-center">
           <a href="#">Websites</a>
@@ -95,8 +98,11 @@ const Category = () => {
 };
 const Useful = () => {
   return (
-    <div className="flex flex-col gap-2">
-      <h4 className="text-[1.38rem] font-bold"> Useful links</h4>
+    <div className="flex flex-col gap-2 mt-4">
+      <h4 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
+        {" "}
+        Useful links
+      </h4>
       <ul className="flex flex-col gap-2">
         <li className="flex gap-2 items-center">
           <a href="#">Privacy policy</a>
@@ -117,13 +123,38 @@ const Useful = () => {
     </div>
   );
 };
+const Subscribe = () => {
+  return (
+    <div className="mt-4">
+      <h5>Subscribe for our newletter.</h5>
+      <p className="text-[12px] w-[250px] text-gray-800">
+        Get notifications right in your mailbox to know about the latest news on
+        education.{" "}
+      </p>
+      <form>
+        <input
+          type="text"
+          className="border b-2 border-gray-200 p-2 my-4 mr-2"
+          placeholder="Enter email"
+        />
+        <button
+          type="submit"
+          className="text-white bg-[var(--primary-color)] rounded p-2 "
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default function page() {
   return (
-    <footer className="flex justify-between max-sm:px-2 h-4/6">
+    <footer className="flex justify-between max-sm:px-2 max-sm:flex-col">
       <Logo />
       <Category />
       <Useful />
+      <Subscribe />
     </footer>
   );
 }
