@@ -8,17 +8,17 @@ import {
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
 
-const Logo = () => (
+const FooterLogo = () => (
   <div className="flex flex-col pt-4">
-    <h4 className="flex items-center">
+    <h3 className="flex items-center">
       <PiBookOpenUserFill
         size="30"
         className="text-[var(--accent-color)] mr-2"
         aria-label="Edu Learning Logo"
       />
       <span className="text-[1.38rem]">edulearning</span>
-    </h4>
-    <h5 className="mb-4">Lagos, Nigeria</h5>
+    </h3>
+    <p className="mb-4">Lagos, Nigeria</p>
     <a href="mailto:edulearning@gmail.com" className="flex pb-2 ">
       <TbMessagePlus size="18" aria-label="Email" />{" "}
       <span className="pl-4">edulearning@gmail.com</span>{" "}
@@ -75,34 +75,36 @@ const Logo = () => (
 const Category = () => {
   return (
     <div className="flex flex-col gap-2 mt-4">
-      <h4 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
+      <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
         {" "}
         Quick links
-      </h4>
-      <ul className="flex flex-col gap-2">
-        <li className="flex gap-2 items-center">
-          <a href="#">Websites</a>
-        </li>
-        <li className="flex gap-2 items-center">
-          <a href="#">Videos</a>
-        </li>{" "}
-        <li className="flex gap-2 items-center">
-          <a href="#">Podcasts</a>
-        </li>{" "}
-        <li className="flex gap-2 items-center">
-          <a href="#">Books</a>
-        </li>
-      </ul>
+      </h3>
+      <nav>
+        <ul className="flex flex-col gap-2">
+          <li className="flex gap-2 items-center">
+            <a href="#">Websites</a>
+          </li>
+          <li className="flex gap-2 items-center">
+            <a href="#">Videos</a>
+          </li>{" "}
+          <li className="flex gap-2 items-center">
+            <a href="#">Podcasts</a>
+          </li>{" "}
+          <li className="flex gap-2 items-center">
+            <a href="#">Books</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
 const Useful = () => {
   return (
     <div className="flex flex-col gap-2 mt-4">
-      <h4 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
+      <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
         {" "}
         Useful links
-      </h4>
+      </h3>
       <ul className="flex flex-col gap-2">
         <li className="flex gap-2 items-center">
           <a href="#">Privacy policy</a>
@@ -126,7 +128,7 @@ const Useful = () => {
 const Subscribe = () => {
   return (
     <div className="mt-4">
-      <h5>Subscribe for our newletter.</h5>
+      <h3>Subscribe for our newletter.</h3>
       <p className="text-[12px] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
@@ -136,9 +138,9 @@ const Subscribe = () => {
           type="text"
           className="border b-2 border-gray-200 p-2 my-4 mr-2"
           placeholder="Enter email"
+          aria-label="input"
         />
         <button
-          type="submit"
           className="text-white bg-[var(--primary-color)] rounded p-2 "
         >
           Send
@@ -148,10 +150,10 @@ const Subscribe = () => {
   );
 };
 
-export default function page() {
+export default function Page() {
   return (
     <footer className="flex justify-between max-sm:px-2 max-sm:flex-col">
-      <Logo />
+      <FooterLogo />
       <Category />
       <Useful />
       <Subscribe />
