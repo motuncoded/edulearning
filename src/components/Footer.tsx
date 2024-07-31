@@ -79,7 +79,7 @@ const Category = () => {
         {" "}
         Quick links
       </h3>
-      <nav>
+      <nav aria-label="Footer Navigation">
         <ul className="flex flex-col gap-2">
           <li className="flex gap-2 items-center">
             <a href="#">Websites</a>
@@ -127,8 +127,8 @@ const Useful = () => {
 };
 const Subscribe = () => {
   return (
-    <div className="mt-4">
-      <h3>Subscribe for our newletter.</h3>
+    <div className="mt-4" aria-label="Subscribe ">
+      <h3>Subscribe for our newsletter.</h3>
       <p className="text-[12px] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
@@ -140,7 +140,7 @@ const Subscribe = () => {
           placeholder="Enter email"
           aria-label="input"
         />
-        <button
+        <button aria-label="send button"
           className="text-white bg-[var(--primary-color)] rounded p-2 "
         >
           Send
@@ -152,7 +152,8 @@ const Subscribe = () => {
 
 export default function Page() {
   return (
-    <footer className="flex justify-between max-sm:px-2 max-sm:flex-col">
+    <footer  aria-label="Footer"
+     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col">
       <FooterLogo />
       <Category />
       <Useful />
