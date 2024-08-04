@@ -1,5 +1,6 @@
 "use client";
 
+
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -13,6 +14,7 @@ import { TbPhoneCall } from "react-icons/tb";
 import Subscribe from "../components/Subscribe";
 
 // footerLogo component
+
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
     <h3 className="flex items-center">
@@ -101,6 +103,7 @@ const Category = () => {
         </ul>
       </nav>
     </section>
+
   );
 };
 const Useful = () => {
@@ -139,6 +142,7 @@ export default function Page() {
       aria-label="Footer"
       className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 "
     >
+
       <FooterLogo />
       <Category />
       <Useful />
