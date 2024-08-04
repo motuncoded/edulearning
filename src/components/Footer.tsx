@@ -1,3 +1,5 @@
+"use client";
+
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -8,6 +10,9 @@ import {
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
 
+import Subscribe from "../components/Subscribe";
+
+// footerLogo component
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
     <h3 className="flex items-center">
@@ -74,7 +79,7 @@ const FooterLogo = () => (
 
 const Category = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
         {" "}
         Quick links
@@ -95,12 +100,12 @@ const Category = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </section>
   );
 };
 const Useful = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section aria-label="Useful-component" className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
         {" "}
         Useful links
@@ -122,38 +127,18 @@ const Useful = () => {
           <a href="#">FAQ</a>
         </li>
       </ul>
-    </div>
-  );
-};
-const Subscribe = () => {
-  return (
-    <div className="mt-4" aria-label="Subscribe ">
-      <h3>Subscribe for our newsletter.</h3>
-      <p className="text-[12px] w-[250px] text-gray-800">
-        Get notifications right in your mailbox to know about the latest news on
-        education.{" "}
-      </p>
-      <form>
-        <input
-          type="text"
-          className="border b-2 border-gray-200 p-2 my-4 mr-2"
-          placeholder="Enter email"
-          aria-label="input"
-        />
-        <button aria-label="send button"
-          className="text-white bg-[var(--primary-color)] rounded p-2 "
-        >
-          Send
-        </button>
-      </form>
-    </div>
+    </section>
   );
 };
 
+/* @client */
+
 export default function Page() {
   return (
-    <footer  aria-label="Footer"
-     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col">
+    <footer
+      aria-label="Footer"
+      className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 "
+    >
       <FooterLogo />
       <Category />
       <Useful />

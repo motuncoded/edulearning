@@ -1,6 +1,10 @@
 # Edulearning
 
+This project is a simple e-learning platform where users can create and manage courses, lessons, and quizzes
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+![Edulearning](edulearning.png)
 
 ## Getting Started
 
