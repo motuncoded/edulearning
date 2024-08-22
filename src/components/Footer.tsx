@@ -9,8 +9,8 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
-
-import Subscribe from "../components/Subscribe";
+import React, { useState } from "react";
+import validator from "validator";
 
 // footerLogo component
 const FooterLogo = () => (
@@ -131,14 +131,59 @@ const Useful = () => {
   );
 };
 
-/* @client */
+const Subscribe = () => {
+  const [email, setEmail] = useState("");
+  const [subscribeMessage, setSubscribeMessage] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!validator.isEmail(email)) {
+      setSubscribeMessage("Please input a valid email");
+    } else {
+      setSubscribeMessage("Thank you for subscribing"); 
+      setEmail("");
+
+    }
+  };
+  return (
+    <section className="mt-4" aria-label="Subscribe ">
+      <h3>Subscribe for our newsletter.</h3>
+      <p className="text-[12px] w-[250px] text-gray-800">
+        Get notifications right in your mailbox to know about the latest news on
+        education.{" "}
+      </p>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
+          placeholder="Enter email"
+          aria-label="input"
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <button
+          type="submit"
+          aria-label="send button"
+          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.] "
+        >
+          Send
+        </button>
+      </form>
+      {subscribeMessage ? (
+        <p
+          className=" text-[.75rem]"
+        >
+          {subscribeMessage}
+        </p>
+      ) : null}
+    </section>
+  );
+};
 
 export default function Page() {
   return (
     <footer
       aria-label="Footer"
-      className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 "
-    >
+      className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 ">
       <FooterLogo />
       <Category />
       <Useful />
