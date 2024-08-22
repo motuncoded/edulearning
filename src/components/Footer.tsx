@@ -1,5 +1,6 @@
 "use client";
 
+
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -13,6 +14,7 @@ import React, { useState } from "react";
 import validator from "validator";
 
 // footerLogo component
+
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
     <h3 className="flex items-center">
@@ -101,6 +103,7 @@ const Category = () => {
         </ul>
       </nav>
     </section>
+
   );
 };
 const Useful = () => {
