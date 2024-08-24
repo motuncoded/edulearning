@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function More() {
   return (
     <section className="my-4 p-2 relative min-h-screen">
-
       <h4 className="text-2xl font-medium">More about Edulearning</h4>
       <p>
         Getting the authetic learning materials from books, videos to podcasts.{" "}
@@ -27,14 +26,12 @@ export default function More() {
       </div>
 
       <div className="flex flex-col p-4 lg:hidden ">
-
         {[
           { src: "/watching.jpg", alt: "Watching" },
           { src: "/books.jpg", alt: "Books" },
           { src: "/headphone.jpg", alt: "headphone" },
         ].map((image, index) => (
           <div key={index} className="mb-4 relative">
-
             <Image src={image.src} width={400} height={300} alt={image.alt} />
           </div>
         ))}

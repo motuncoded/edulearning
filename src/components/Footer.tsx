@@ -1,6 +1,5 @@
 "use client";
 
-
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -10,7 +9,7 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import validator from "validator";
 
 // footerLogo component
@@ -103,7 +102,6 @@ const Category = () => {
         </ul>
       </nav>
     </section>
-
   );
 };
 const Useful = () => {
@@ -143,11 +141,19 @@ const Subscribe = () => {
     if (!validator.isEmail(email)) {
       setSubscribeMessage("Please input a valid email");
     } else {
-      setSubscribeMessage("Thank you for subscribing"); 
+      setSubscribeMessage("Thank you for subscribing");
       setEmail("");
-
     }
   };
+
+  useEffect(() => {
+    if (subscribeMessage) {
+      const timeoutId = setTimeout(() => {
+        setSubscribeMessage("");
+      }, 2000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [subscribeMessage]);
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
@@ -158,6 +164,7 @@ const Subscribe = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          value={email}
           className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
           placeholder="Enter email"
           aria-label="input"
@@ -172,12 +179,10 @@ const Subscribe = () => {
         </button>
       </form>
       {subscribeMessage ? (
-        <p
-          className=" text-[.75rem]"
-        >
-          {subscribeMessage}
-        </p>
-      ) : null}
+        <p className=" text-[.75rem]">{subscribeMessage}</p>
+      ) : (
+        <p></p>
+      )}
     </section>
   );
 };
@@ -186,7 +191,8 @@ export default function Page() {
   return (
     <footer
       aria-label="Footer"
-      className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 ">
+      className="flex justify-between py-4 max-sm:px-4 max-sm:flex-col  max-md:flex-col max-md:px-4  max-xl:flex-col max-xl:px-4 "
+    >
       <FooterLogo />
       <Category />
       <Useful />
