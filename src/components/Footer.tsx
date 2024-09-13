@@ -1,3 +1,5 @@
+"use client"
+import { useState, useEffect, ReactEventHandler } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -7,6 +9,10 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
+import axios from "axios";  
+import validator from "validator";  
+
+
 
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
@@ -126,27 +132,66 @@ const Useful = () => {
   );
 };
 const Subscribe = () => {
+   const [email, setEmail] = useState("");
+   const [subscribeMessage, setSubscribeMessage] = useState("");
+   const [error, setError] = useState(""); 
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  
+    try {
+      const res = await axios.post("/api/subscribe", { email });
+
+      if (res.status === 200) {
+        setSubscribeMessage(res.data.message);
+        setError("");
+        setTimeout(() => {
+          setSubscribeMessage("");
+        }, 3000);
+      }
+    } catch (error:any) {
+      console.error(
+        "Error during subscription:",
+        error.response?.data || error.message,
+      );
+      setSubscribeMessage("Subscription failed. Please try again.");
+      setError("An error occurred");
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+
+    setEmail("");
+  };  
   return (
-    <div className="mt-4" aria-label="Subscribe ">
+    <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
       <p className="text-[12px] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
       </p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="border b-2 border-gray-200 p-2 my-4 mr-2"
+          className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
           placeholder="Enter email"
           aria-label="input"
+          onChange={(event) => setEmail(event.target.value)}  
+
         />
-        <button aria-label="send button"
-          className="text-white bg-[var(--primary-color)] rounded p-2 "
+        <button
+                    type="submit"  
+          aria-label="send button"
+          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.75rem] "
         >
           Send
         </button>
       </form>
-    </div>
+      {subscribeMessage && (
+        <p className="text-green-600 text-[.75rem]">{subscribeMessage}</p>
+      )}
+      {error && <p className="text-red-600 text-[.75rem]">{error}</p>}
+    </section>
   );
 };
 
