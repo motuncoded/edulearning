@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, ReactEventHandler } from "react";
+import { useState } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -10,9 +10,11 @@ import {
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
 import axios from "axios";  
-import validator from "validator";  
 
-
+interface ApiResponse {
+  status: number;
+  message: string;
+}
 
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
@@ -140,8 +142,7 @@ const Subscribe = () => {
     event.preventDefault();
   
     try {
-      const res = await axios.post("/api/subscribe", { email });
-
+    const res = await axios.post<ApiResponse>("/api/subscribe", { email });
       if (res.status === 200) {
         setSubscribeMessage(res.data.message);
         setError("");
@@ -156,12 +157,13 @@ const Subscribe = () => {
       );
       setSubscribeMessage("Subscription failed. Please try again.");
       setError("An error occurred");
+      setEmail("");
       setTimeout(() => {
+
         setError("");
       }, 3000);
     }
 
-    setEmail("");
   };  
   return (
     <section className="mt-4" aria-label="Subscribe ">
@@ -173,14 +175,14 @@ const Subscribe = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          value={email}
           className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
           placeholder="Enter email"
           aria-label="input"
-          onChange={(event) => setEmail(event.target.value)}  
-
+          onChange={(event) => setEmail(event.target.value)}
         />
         <button
-                    type="submit"  
+          type="submit"
           aria-label="send button"
           className="text-white bg-[var(--primary-color)] rounded p-2 text-[.75rem] "
         >
