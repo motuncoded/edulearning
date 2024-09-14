@@ -1,5 +1,7 @@
+
 "use client"
 import { useState } from "react";
+
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -9,12 +11,14 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
+
 import axios from "axios";  
 
 interface ApiResponse {
   status: number;
   message: string;
 }
+
 
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
@@ -134,6 +138,7 @@ const Useful = () => {
   );
 };
 const Subscribe = () => {
+
    const [email, setEmail] = useState("");
    const [subscribeMessage, setSubscribeMessage] = useState("");
    const [error, setError] = useState(""); 
@@ -167,11 +172,13 @@ const Subscribe = () => {
   };  
   return (
     <section className="mt-4" aria-label="Subscribe ">
+
       <h3>Subscribe for our newsletter.</h3>
       <p className="text-[12px] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
       </p>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -185,15 +192,18 @@ const Subscribe = () => {
           type="submit"
           aria-label="send button"
           className="text-white bg-[var(--primary-color)] rounded p-2 text-[.75rem] "
+
         >
           Send
         </button>
       </form>
+
       {subscribeMessage && (
         <p className="text-green-600 text-[.75rem]">{subscribeMessage}</p>
       )}
       {error && <p className="text-red-600 text-[.75rem]">{error}</p>}
     </section>
+
   );
 };
 
