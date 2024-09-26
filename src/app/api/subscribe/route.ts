@@ -1,29 +1,20 @@
 import { NextResponse } from "next/server";
-
-const subscribedEmails: string[] = [];
+import validator from "validator";
 
 export async function POST(request: Request) {
   const { email } = await request.json();
 
-  if (!email || !email.includes("@")) {
+  if (!email || !validator.isEmail(email)) {
     return NextResponse.json(
       { message: "Invalid email address" },
       { status: 400 },
     );
   }
 
-  if (subscribedEmails.includes(email)) {
-    return NextResponse.json(
-      { message: "Already subscribed!" },
-      { status: 400 },
-    );
-  }
-
-  subscribedEmails.push(email);
-  console.log(`New subscription: ${email}`);
+  console.log(`Subscribed: ${email}`);
 
   return NextResponse.json(
-    { message: `Thanks for Subscribing` },
+    { message: "Subscription successful" },
     { status: 200 },
   );
 }

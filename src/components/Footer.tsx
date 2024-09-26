@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
@@ -9,7 +9,6 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
-import axios from "axios";  
 
 interface ApiResponse {
   status: number;
@@ -134,37 +133,28 @@ const Useful = () => {
   );
 };
 const Subscribe = () => {
-   const [email, setEmail] = useState("");
-   const [subscribeMessage, setSubscribeMessage] = useState("");
-   const [error, setError] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [subscribeMessage, setSubscribeMessage] = useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-  
-    try {
-    const res = await axios.post<ApiResponse>("/api/subscribe", { email });
-      if (res.status === 200) {
-        setSubscribeMessage(res.data.message);
-        setError("");
-        setTimeout(() => {
-          setSubscribeMessage("");
-        }, 3000);
-      }
-    } catch (error:any) {
-      console.error(
-        "Error during subscription:",
-        error.response?.data || error.message,
-      );
-      setSubscribeMessage("Subscription failed. Please try again.");
-      setError("An error occurred");
-      setEmail("");
-      setTimeout(() => {
 
-        setError("");
-      }, 3000);
-    }
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
 
-  };  
+    const result = await response.json();
+    setSubscribeMessage(result.message);
+    setEmail("");
+
+    setTimeout(() => {
+      setSubscribeMessage("");
+    }, 3000);
+  };
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
@@ -192,15 +182,16 @@ const Subscribe = () => {
       {subscribeMessage && (
         <p className="text-green-600 text-[.75rem]">{subscribeMessage}</p>
       )}
-      {error && <p className="text-red-600 text-[.75rem]">{error}</p>}
     </section>
   );
 };
 
 export default function Page() {
   return (
-    <footer  aria-label="Footer"
-     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col">
+    <footer
+      aria-label="Footer"
+      className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col"
+    >
       <FooterLogo />
       <Category />
       <Useful />
