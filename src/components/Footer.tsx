@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useState } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
@@ -81,7 +81,7 @@ const FooterLogo = () => (
 
 const Category = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
         {" "}
         Quick links
@@ -102,12 +102,12 @@ const Category = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </section>
   );
 };
 const Useful = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
         {" "}
         Useful links
@@ -129,32 +129,33 @@ const Useful = () => {
           <a href="#">FAQ</a>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 const Subscribe = () => {
-  const [email, setEmail] = useState("");
-  const [subscribeMessage, setSubscribeMessage] = useState("");
+   const [email, setEmail] = useState("");
+   const [subscribeMessage, setSubscribeMessage] = useState("");
+   const [error, setError] = useState(""); 
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const response = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
+      const response = await fetch('/api/subscribe', {  
+            method: 'POST',  
+            headers: {  
+                'Content-Type': 'application/json',  
+            },  
+            body: JSON.stringify({ email }),  
+        });  
 
-    const result = await response.json();
-    setSubscribeMessage(result.message);
-    setEmail("");
+        const result = await response.json();  
+        setSubscribeMessage(result.message);  
+        setEmail(''); 
 
-    setTimeout(() => {
-      setSubscribeMessage("");
+    setInterval(() => {
+      setSubscribeMessage("")
     }, 3000);
-  };
+  };  
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
@@ -188,10 +189,8 @@ const Subscribe = () => {
 
 export default function Page() {
   return (
-    <footer
-      aria-label="Footer"
-      className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col"
-    >
+    <footer  aria-label="Footer"
+     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
       <FooterLogo />
       <Category />
       <Useful />
