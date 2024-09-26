@@ -140,22 +140,22 @@ const Subscribe = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-      const response = await fetch('/api/subscribe', {  
-            method: 'POST',  
-            headers: {  
-                'Content-Type': 'application/json',  
-            },  
-            body: JSON.stringify({ email }),  
-        });  
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
 
-        const result = await response.json();  
-        setSubscribeMessage(result.message);  
-        setEmail(''); 
+    const result = await response.json();
+    setSubscribeMessage(result.message);
+    setEmail("");
 
-    setInterval(() => {
-      setSubscribeMessage("")
+    setTimeout(() => {
+      setSubscribeMessage("");
     }, 3000);
-  };  
+  };
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
