@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -152,10 +152,17 @@ const Subscribe = () => {
     setSubscribeMessage(result.message);
     setEmail("");
 
-    setTimeout(() => {
-      setSubscribeMessage("");
-    }, 3000);
   };
+
+   useEffect(() => {  
+    if (subscribeMessage) {  
+      const timer = setTimeout(() => {  
+        setSubscribeMessage("");  
+      }, 3000);  
+
+      return () => clearTimeout(timer);  
+    }  
+  }, [subscribeMessage]);  
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>

@@ -26,7 +26,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/subscribe/subscribe.ts"
   ],
   "exclude": ["node_modules"]
 }
