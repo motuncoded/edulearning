@@ -8,7 +8,6 @@ import Category from "./category";
 import Videos from "./videos";
 import More from "./more";
 
-
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 

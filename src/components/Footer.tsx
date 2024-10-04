@@ -1,3 +1,5 @@
+"use client"
+import { useState,useEffect } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -7,6 +9,11 @@ import {
   TbMessagePlus,
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
+
+interface ApiResponse {
+  status: number;
+  message: string;
+}
 
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
@@ -74,7 +81,7 @@ const FooterLogo = () => (
 
 const Category = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)]">
         {" "}
         Quick links
@@ -95,12 +102,12 @@ const Category = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </section>
   );
 };
 const Useful = () => {
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <section className="flex flex-col gap-2 mt-4">
       <h3 className="text-[1.38rem] underline	decoration-[var(--accent-color)] ">
         {" "}
         Useful links
@@ -122,38 +129,75 @@ const Useful = () => {
           <a href="#">FAQ</a>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 const Subscribe = () => {
+   const [email, setEmail] = useState("");
+   const [subscribeMessage, setSubscribeMessage] = useState("");
+   const [error, setError] = useState(""); 
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const result = await response.json();
+    setSubscribeMessage(result.message);
+    setEmail("");
+
+  };
+
+   useEffect(() => {  
+    if (subscribeMessage) {  
+      const timer = setTimeout(() => {  
+        setSubscribeMessage("");  
+      }, 3000);  
+
+      return () => clearTimeout(timer);  
+    }  
+  }, [subscribeMessage]);  
   return (
-    <div className="mt-4" aria-label="Subscribe ">
+    <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
       <p className="text-[12px] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
       </p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="border b-2 border-gray-200 p-2 my-4 mr-2"
+          value={email}
+          className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
           placeholder="Enter email"
           aria-label="input"
+          onChange={(event) => setEmail(event.target.value)}
         />
-        <button aria-label="send button"
-          className="text-white bg-[var(--primary-color)] rounded p-2 "
+        <button
+          type="submit"
+          aria-label="send button"
+          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.75rem] "
         >
           Send
         </button>
       </form>
-    </div>
+      {subscribeMessage && (
+        <p className="text-green-600 text-[.75rem]">{subscribeMessage}</p>
+      )}
+    </section>
   );
 };
 
 export default function Page() {
   return (
     <footer  aria-label="Footer"
-     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col">
+     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
       <FooterLogo />
       <Category />
       <Useful />
