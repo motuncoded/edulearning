@@ -8,8 +8,10 @@ import Category from "./category";
 import Videos from "./videos";
 import More from "./more";
 
+import SignUpModal from "./components/Signup";
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -29,9 +31,16 @@ export default function Home() {
           {quotes[currentIndex].quote}
         </h3>
         <div className="flex justify-center items-center py-4 ">
-          <button className="flex justify-center p-2 rounded text-white bg-[var(--accent-color)]">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex justify-center p-2 rounded text-white bg-[var(--accent-color)]"
+          >
             Get started
           </button>
+          <SignUpModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
         <div className="pt-6">
           <Image
