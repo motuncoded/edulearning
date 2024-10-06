@@ -1,3 +1,4 @@
+
 "use client"
 import { useState,useEffect } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
@@ -133,6 +134,7 @@ const Useful = () => {
   );
 };
 const Subscribe = () => {
+
    const [email, setEmail] = useState("");
    const [subscribeMessage, setSubscribeMessage] = useState("");
    const [error, setError] = useState(""); 
@@ -151,6 +153,7 @@ const Subscribe = () => {
     const result = await response.json();
     setSubscribeMessage(result.message);
     setEmail("");
+
 
   };
 
@@ -171,6 +174,7 @@ const Subscribe = () => {
         education.{" "}
       </p>
       <form onSubmit={handleSubmit}>
+
         <input
           type="text"
           value={email}
@@ -196,6 +200,7 @@ const Subscribe = () => {
 
 export default function Page() {
   return (
+
     <footer  aria-label="Footer"
      className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
       <FooterLogo />
