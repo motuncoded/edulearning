@@ -45,10 +45,7 @@ const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         <h2 className="text-2xl text-center mb-2">Sign Up</h2>
         <p className="text-gray-400 mb-6 text-center">Join our community!</p>
 
-        <form
-          className="flex flex-col justify-center items-center m-2"
-          onSubmit={handleSubmit}
-        >
+        <form className="flex flex-col justify-center items-center m-2 onSubmit={handleSubmit}">
           <div className="mb-2 p-2">
             <label htmlFor="name"></label>
             <input

@@ -195,10 +195,7 @@ const Subscribe = () => {
 
 export default function Page() {
   return (
-    <footer
-      aria-label="Footer"
-      className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col"
-    >
+    <footer className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
       <FooterLogo />
       <Category />
       <Useful />
