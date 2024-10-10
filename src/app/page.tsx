@@ -7,8 +7,10 @@ import Offer from "./offer";
 import Category from "./category";
 import Videos from "./videos";
 import More from "./more";
-
 import SignUpModal from "./components/Signup";
+
+
+
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
