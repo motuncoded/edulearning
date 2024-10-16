@@ -5,17 +5,27 @@ import { TiTimesOutline } from "react-icons/ti";
 
 interface ModalProps {
   isOpen: boolean;
-  onClose: () => void; // Callback function type
+  onClose: () => void;
 }
 
 const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-  const [email, setEmail] = useState<string>("");
-  const [name, setName] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [formData, setFormData] = useState({
+    email: "",
+    name: "",
+    password: "",
+  });
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState<string>("");
 
   if (!isOpen) return null;
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,21 +33,25 @@ const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     setSuccess("");
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      );
       setSuccess("User created successfully!");
-      setEmail("");
-      setPassword("");
+      setFormData({ email: "", name: "", password: "" });
     } catch (err) {
       setError((err as Error).message);
     }
   };
+
   return (
-    <section className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <section className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="container bg-white p-5 rounded shadow-md max-w-md w-full">
         <div className="flex justify-end">
           <button
             onClick={onClose}
-            className=" p-2 text-[var(--background-color)] bg-[var(--accent-color)]"
+            className="p-2 text-[var(--background-color)] bg-[var(--accent-color)]"
           >
             <TiTimesOutline />
           </button>
@@ -45,43 +59,49 @@ const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         <h2 className="text-2xl text-center mb-2">Sign Up</h2>
         <p className="text-gray-400 mb-6 text-center">Join our community!</p>
 
-        <form className="flex flex-col justify-center items-center m-2 onSubmit={handleSubmit}">
+        <form
+          className="flex flex-col justify-center items-center m-2"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-2 p-2">
-            <label htmlFor="name"></label>
+            <label htmlFor="name" className="sr-only">
+              Password
+            </label>
             <input
               type="text"
+              name="name"
               placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={formData.name}
+              onChange={handleFormChange}
               required
-              className=" w-[300px] appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-[300px] appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-2 p-2">
-            <label htmlFor="email"></label>
-
+            <label htmlFor="email" className="sr-only"></label>
             <input
               type="email"
+              name="email"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className=" appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.email}
+              onChange={handleFormChange}
+              className="appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
           <div className="mb-2 p-2">
-            <label htmlFor="password"></label>
-
+            <label htmlFor="password" className="sr-only"></label>{" "}
             <input
               type="password"
+              name="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleFormChange}
               required
               className="appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-          <div className="flex justify-center items-center py-4 ">
+          <div className="flex justify-center items-center py-4">
             <button
               type="submit"
               className="flex justify-center p-2 rounded text-white bg-[var(--accent-color)]"
@@ -95,6 +115,10 @@ const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               Sign In
             </a>
           </div>
+          {error && <div className="text-red-500 text-center">{error}</div>}{" "}
+          {success && (
+            <div className="text-green-500 text-center">{success}</div>
+          )}{" "}
         </form>
       </div>
     </section>

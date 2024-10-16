@@ -1,6 +1,5 @@
-
-"use client"
-import { useState,useEffect } from "react";
+"use client";
+import { useState, useEffect } from "react";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import {
   TbBrandFacebook,
@@ -134,10 +133,9 @@ const Useful = () => {
   );
 };
 const Subscribe = () => {
-
-   const [email, setEmail] = useState("");
-   const [subscribeMessage, setSubscribeMessage] = useState("");
-   const [error, setError] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [subscribeMessage, setSubscribeMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -153,19 +151,17 @@ const Subscribe = () => {
     const result = await response.json();
     setSubscribeMessage(result.message);
     setEmail("");
-
-
   };
 
-   useEffect(() => {  
-    if (subscribeMessage) {  
-      const timer = setTimeout(() => {  
-        setSubscribeMessage("");  
-      }, 3000);  
+  useEffect(() => {
+    if (subscribeMessage) {
+      const timer = setTimeout(() => {
+        setSubscribeMessage("");
+      }, 3000);
 
-      return () => clearTimeout(timer);  
-    }  
-  }, [subscribeMessage]);  
+      return () => clearTimeout(timer);
+    }
+  }, [subscribeMessage]);
   return (
     <section className="mt-4" aria-label="Subscribe ">
       <h3>Subscribe for our newsletter.</h3>
@@ -174,7 +170,6 @@ const Subscribe = () => {
         education.{" "}
       </p>
       <form onSubmit={handleSubmit}>
-
         <input
           type="text"
           value={email}
@@ -200,9 +195,7 @@ const Subscribe = () => {
 
 export default function Page() {
   return (
-
-    <footer  aria-label="Footer"
-     className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
+    <footer className="flex justify-between py-4 max-sm:px-2 max-sm:flex-col max-xl:px-2 max-xl:flex-col">
       <FooterLogo />
       <Category />
       <Useful />
