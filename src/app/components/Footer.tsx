@@ -17,15 +17,14 @@ interface ApiResponse {
 
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
-    <h3 className="flex items-center">
+    <h3 className="flex items-center mb-4">
       <PiBookOpenUserFill
         size="30"
-        className="text-[var(--accent-color)] mr-2"
+        className="text-[var(--accent-color)]  mr-2"
         aria-label="Edu Learning Logo"
       />
       <span className="text-[1.38rem]">edulearning</span>
     </h3>
-    <p className="mb-4">Lagos, Nigeria</p>
     <a href="mailto:edulearning@gmail.com" className="flex pb-2 ">
       <TbMessagePlus size="18" aria-label="Email" />{" "}
       <span className="pl-4">edulearning@gmail.com</span>{" "}
@@ -164,30 +163,39 @@ const Subscribe = () => {
   }, [subscribeMessage]);
   return (
     <section className="mt-4" aria-label="Subscribe ">
-      <h3>Subscribe for our newsletter.</h3>
-      <p className="text-[12px] w-[250px] text-gray-800">
+      <h3 className="font-bold">Subscribe for our newsletter.</h3>
+      <p className="text-[.9rem] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
       </p>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="search" className="sr-only">
+          Search
+        </label>
         <input
           type="text"
           value={email}
-          className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.75rem]"
+          className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.9rem]"
           placeholder="Enter email"
-          aria-label="input"
+          aria-label="email"
+          name="email"
           onChange={(event) => setEmail(event.target.value)}
         />
         <button
           type="submit"
           aria-label="send button"
-          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.75rem] "
+          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.9rem] "
         >
           Send
         </button>
       </form>
       {subscribeMessage && (
-        <p className="text-green-600 text-[.75rem]">{subscribeMessage}</p>
+        <p
+          className="text-green-600 text-[.75rem]"
+          aria-describedby="usernameError"
+        >
+          {subscribeMessage}
+        </p>
       )}
     </section>
   );

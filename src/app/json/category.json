@@ -1,0 +1,48 @@
+[
+  {
+    "icon": "/technology.png",
+    "label": "Technology",
+    "link": "/categories/technology"
+  },
+  {
+    "icon": "/business.png",
+    "label": "Business",
+    "link": "/categories/business"
+  },
+  {
+    "icon": "/language.png",
+    "label": "Language",
+    "link": "/categories/language"
+  },
+  {
+    "icon": "/language.png",
+    "label": "Language",
+    "link": "/categories/language"
+  },
+  {
+    "icon": "/artanddesign.png",
+    "label": "Art",
+    "link": "/categories/art",
+    "image": "/arts.png"
+  },
+  {
+    "icon": "/lifestyle.png",
+    "label": "Lifestyle",
+    "link": "/categories/lifestyle"
+  },
+  {
+    "icon": "/health.svg",
+    "label": "Health and fitness",
+    "link": "/categories/health"
+  },
+  {
+    "icon": "/finance.png",
+    "label": "Finance",
+    "link": "/categories/finance"
+  },
+  {
+    "icon": "/music.svg",
+    "label": "Music",
+    "link": "/categories/music"
+  }
+]

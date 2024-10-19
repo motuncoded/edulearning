@@ -1,4 +1,4 @@
-import category from "./category.json";
+import categories from "./json/category.json";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
@@ -22,21 +22,21 @@ export default function Category() {
       </div>
       <div className="max-w-[1000px] w-[calc(100% - 2rem)] m-auto">
         <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-1 max-lg:grid-cols-3 ">
-          {category.map((cat: Cat, i) => (
-            <div
-              key={i}
+          {categories.map((category, index) => (
+            <figure
+              key={index}
               className=" w-[200px] mx-2 my-2 h-[150px] flex justify-center flex-col items-center max-sm:m-0"
             >
               <Image
-                src={cat.icon}
-                alt={cat.label}
+                src={category.icon}
+                alt={category.label}
                 width={200}
                 height={200}
                 className="	"
               />
 
-              <h5>{cat.label}</h5>
-            </div>
+              <figcaption>{category.label}</figcaption>
+            </figure>
           ))}
         </div>
       </div>
