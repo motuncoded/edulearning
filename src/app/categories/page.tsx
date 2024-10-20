@@ -6,9 +6,9 @@ function CategoriesPage() {
   return (
     <div>
       <div className=" flex justify-center items-center  h-32 w-[calc(100% - 2rem)] rounded">
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
           All Categories
-        </h2>
+        </h1>
       </div>
       {/* List of categories */}
       <div className="my-4">

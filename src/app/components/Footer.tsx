@@ -10,21 +10,16 @@ import {
 } from "react-icons/tb";
 import { TbPhoneCall } from "react-icons/tb";
 
-interface ApiResponse {
-  status: number;
-  message: string;
-}
-
 const FooterLogo = () => (
   <div className="flex flex-col pt-4">
-    <h3 className="flex items-center mb-4">
+    <p className="flex items-center mb-4">
       <PiBookOpenUserFill
         size="30"
         className="text-[var(--accent-color)]  mr-2"
         aria-label="Edu Learning Logo"
       />
       <span className="text-[1.38rem]">edulearning</span>
-    </h3>
+    </p>
     <a href="mailto:edulearning@gmail.com" className="flex pb-2 ">
       <TbMessagePlus size="18" aria-label="Email" />{" "}
       <span className="pl-4">edulearning@gmail.com</span>{" "}
@@ -163,7 +158,7 @@ const Subscribe = () => {
   }, [subscribeMessage]);
   return (
     <section className="mt-4" aria-label="Subscribe ">
-      <h3 className="font-bold">Subscribe for our newsletter.</h3>
+      <p className="font-bold">Subscribe for our newsletter.</p>
       <p className="text-[.9rem] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
         education.{" "}
