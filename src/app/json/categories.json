@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Art",
+    "link": "/categories/art",
+    "image": "/arts.png"
+  },
+  {
+    "label": "Business",
+    "link": "/categories/business",
+    "image": "/investment.png"
+  },
+  {
+    "label": "Design",
+    "link": "/categories/design",
+    "image": "/design.png"
+  },
+  {
+    "label": "Education",
+    "link": "/categories/education",
+    "image": "/education.png"
+  },
+  {
+    "label": "Health",
+    "link": "/categories/health",
+    "image": "/healthy.png"
+  },
+  {
+    "label": "Language",
+    "link": "/categories/language",
+    "image": "/languages.png"
+  },
+  {
+    "image": "/needs.png",
+    "label": "Lifestyle",
+    "link": "/categories/lifestyle"
+  },
+  {
+    "label": "Technology",
+    "link": "/categories/technology",
+    "image": "/technologies.png"
+  }
+]

@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import quotes from "./quotes.json";
+import quotes from "./json/quotes.json";
 import Offer from "./offer";
 import Category from "./category";
 import Videos from "./videos";
 import More from "./more";
 import SignUpModal from "./components/Signup";
-
+import Footer from "./components/Footer";
 
 
 export default function Home() {
@@ -57,6 +57,7 @@ export default function Home() {
       <Category />
       <Videos />
       <More />
+      <Footer />
     </div>
   );
 }

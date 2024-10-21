@@ -36,10 +36,10 @@ const NavList = () => (
   <nav aria-label="Main navigation">
     <ul className="flex justify-center items-center py-4 max-sm:flex-col max-sm:justify-start  ">
       <NavItem href="/">Home</NavItem>
-      <NavItem href="/categories">Categories</NavItem>
       <NavItem href="/about">About</NavItem>
-      <NavItem href="/contact">Contact</NavItem>
+      <NavItem href="/categories">Categories</NavItem>
       <NavItem href="/blog">Blog</NavItem>
+      <NavItem href="/contact">Contact</NavItem>
     </ul>
   </nav>
 );
