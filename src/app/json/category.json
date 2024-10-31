@@ -15,14 +15,9 @@
     "link": "/categories/language"
   },
   {
-    "icon": "/language.png",
-    "label": "Language",
-    "link": "/categories/language"
-  },
-  {
     "icon": "/artanddesign.png",
     "label": "Art",
-    "link": "/categories/art",
+    "link": "/category/art",
     "image": "/arts.png"
   },
   {
