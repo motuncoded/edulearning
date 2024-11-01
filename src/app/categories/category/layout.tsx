@@ -1,21 +1,22 @@
-import React, { ReactNode } from "react";
 
-type CategoryLayoutProps = {
-  children: ReactNode;
-  headerTitle: string;
-  headerSubTitle: string;
-  headerIcon: string;
+interface LayoutProps {
+  headerTitle?: string;
+  headerSubTitle?: string;
+  headerIcon?: string;
+  children: React.ReactNode;
 };
-function CategoryLayout({
-  children,
+interface CategoryLayoutType extends LayoutProps {}
+
+ const CategoryLayout: React.FC<CategoryLayoutType> = ({
   headerTitle,
   headerSubTitle,
   headerIcon,
-}: CategoryLayoutProps) {
+  children,
+}) => {
   return (
     <section className="my-4 px-4">
       <div className="grid grid-cols-1 gap 4">
-        <h1 className=" mb-2 text-4xl underline-animation font-semibold flex items-center">
+        <h1 className=" mb-2 text-4xl  font-semibold flex items-center">
           {headerTitle}
           <span className="text-2xl mx-2">{headerIcon}</span>
         </h1>
@@ -24,6 +25,9 @@ function CategoryLayout({
       <div>{children}</div>
     </section>
   );
-}
+};
 
-export default CategoryLayout;
+
+
+
+export default CategoryLayout

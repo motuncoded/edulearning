@@ -1,43 +1,34 @@
 [
   {
     "icon": "/technology.png",
-    "label": "Technology",
-    "link": "/categories/technology"
+    "label": "Technology"
   },
   {
     "icon": "/business.png",
-    "label": "Business",
-    "link": "/categories/business"
+    "label": "Business"
   },
   {
     "icon": "/language.png",
-    "label": "Language",
-    "link": "/categories/language"
+    "label": "Language"
   },
   {
     "icon": "/artanddesign.png",
-    "label": "Art",
-    "link": "/category/art",
-    "image": "/arts.png"
+    "label": "Art"
   },
   {
     "icon": "/lifestyle.png",
-    "label": "Lifestyle",
-    "link": "/categories/lifestyle"
+    "label": "Lifestyle"
   },
   {
     "icon": "/health.svg",
-    "label": "Health and fitness",
-    "link": "/categories/health"
+    "label": "Health and fitness"
   },
   {
     "icon": "/finance.png",
-    "label": "Finance",
-    "link": "/categories/finance"
+    "label": "Finance"
   },
   {
     "icon": "/music.svg",
-    "label": "Music",
-    "link": "/categories/music"
+    "label": "Music"
   }
 ]

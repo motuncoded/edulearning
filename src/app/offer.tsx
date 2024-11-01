@@ -14,7 +14,7 @@ const OfferIcon = ({ icon, label, description }: OfferIconProps) => (
   <div className="py-4 pr-4">
     {icon}
     <h5 className="font-bold">{label}</h5>
-    <h6 className="">{description}</h6>
+    <p>{description}</p>
   </div>
 );
 
