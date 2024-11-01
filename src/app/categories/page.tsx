@@ -7,6 +7,7 @@ function CategoriesPage() {
     <div>
       <div className=" flex justify-center items-center  h-32 w-[calc(100% - 2rem)] rounded">
         <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-yellow-400 to-orange-400 bg-clip-text text-transparent max-sm:text-2xl">
+
           All Categories
         </h1>
       </div>
@@ -29,7 +30,7 @@ function CategoriesPage() {
 
                 <figcaption className="my-4">
                   <Link href={category.link} className="hover:underline ">
-                    {category.label}
+    {category.label}
                   </Link>
                 </figcaption>
               </figure>

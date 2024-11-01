@@ -30,7 +30,9 @@ useEffect(() => {
    } catch (error: any) {
      setError({ message: error.message });
    }
- };  }, []);
+  };
+},
+ []);
   return (
     <div className="my-4">
       <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-2 ">
