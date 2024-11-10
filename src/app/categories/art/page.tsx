@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import CategoryLayout from "../layout";
+import Layout from "../layout";
 import Books from "./Books";
 import Videos from "./Videos";
 
@@ -10,17 +10,17 @@ const tabs = [
   { id: "tab2", label: "Videos", Component: <Videos /> },
 ];
 
-function Art() {
+const Art: React.FC = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const ActiveTabComponent = tabs.find(
     (tab) => tab.id === activeTab,
   )?.Component;
 
   return (
-    <CategoryLayout
-      headerTitle="Art"
-      headerSubTitle="Explore a diverse range of educational materials on art, from history and techniques to modern styles and creative expression."
-      headerIcon="&#127912;"
+    <Layout
+      title="Art"
+      heading="Explore a diverse range of educational materials on art, from history and techniques to modern styles and creative expression."
+      icon="&#127912;"
     >
       <div className="mt-8">
         <div className="flex space-x-4 border-b">
@@ -41,8 +41,8 @@ function Art() {
 
         <div className="mt-4">{ActiveTabComponent}</div>
       </div>
-    </CategoryLayout>
+    </Layout>
   );
-}
+};
 
 export default Art;

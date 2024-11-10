@@ -18,21 +18,18 @@ function Books() {
   const [books, setBooks] = useState<BookType[]>([]);
   const [error, setError] = useState<Error | null>(null);
 
-
- 
-useEffect(() => {
- const fetchBooks = async () => {
-   try {
-     const response = await fetch(`${BOOKS_URL}`);
-     if (!response.ok) throw new Error("Error fetching data");
-     const data = await response.json();
-     setBooks(data.docs || []);
-   } catch (error: any) {
-     setError({ message: error.message });
-   }
-  };
-},
- []);
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await fetch(`${BOOKS_URL}`);
+        if (!response.ok) throw new Error("Error fetching data");
+        const data = await response.json();
+        setBooks(data.docs || []);
+      } catch (error: any) {
+        setError({ message: error.message });
+      }
+    };
+  }, []);
   return (
     <div className="my-4">
       <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-2 ">

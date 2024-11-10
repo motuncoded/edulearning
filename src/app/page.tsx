@@ -10,7 +10,6 @@ import More from "./more";
 import SignUpModal from "./components/Signup";
 import Footer from "./components/Footer";
 
-
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
