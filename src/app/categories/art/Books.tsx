@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 type BookType = {
@@ -29,6 +30,7 @@ function Books() {
         setError({ message: error.message });
       }
     };
+    fetchBooks()
   }, []);
   return (
     <div className="my-4">
@@ -37,7 +39,7 @@ function Books() {
         {books.map((book) => (
           <div key={book.key} className="p-4 bg-white rounded shadow">
             {book.cover_i ? (
-              <img
+              <Image
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                 alt={`Cover of ${book.title}`}
                 className="mb-2 rounded w-[200px] h-[200px]"

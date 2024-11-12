@@ -6,7 +6,7 @@ export type LayoutProps = {
 };
 interface CategoryLayoutType extends LayoutProps {}
 
-const Layout: React.FC<CategoryLayoutType> = ({
+const CategoryLayout: React.FC<CategoryLayoutType> = ({
   title,
   heading,
   icon,
@@ -19,11 +19,11 @@ const Layout: React.FC<CategoryLayoutType> = ({
           {title}
           <span className="text-2xl mx-2">{icon}</span>
         </h1>
-        <h2 className="mt-2 w-2/4 max-sm:w-5/6 ">{heading}</h2>
+        <h2 className="mt-2 w-2/4 max-sm:w-5/6">{heading}</h2>
       </div>
       {children}
     </section>
   );
 };
 
-export default Layout;
+export default CategoryLayout;
