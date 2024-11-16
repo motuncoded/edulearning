@@ -10,7 +10,6 @@ import More from "./more";
 import SignUpModal from "./components/Signup";
 import Footer from "./components/Footer";
 
-
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +28,7 @@ export default function Home() {
           Drive the world through knowledge.
         </h2>
 
-        <h3 className="max-sm:text-center max-sm:pt-4 px-2">
+        <h3 className="max-sm:text-center max-sm:pt-4 px-2 max-md:text-center">
           {quotes[currentIndex].quote}
         </h3>
         <div className="flex justify-center items-center py-4 ">

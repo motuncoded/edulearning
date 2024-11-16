@@ -14,20 +14,20 @@ const OfferIcon = ({ icon, label, description }: OfferIconProps) => (
   <div className="py-4 pr-4">
     {icon}
     <h5 className="font-bold">{label}</h5>
-    <h6>{description}</h6>
+    <p>{description}</p>
   </div>
 );
 
 const Offer = () => {
   return (
-    <section className="flex justify-between items-center max-sm:flex-col p-4 max-md:flex-col max-lg:flex-col max-xl:flex-col min-h-screen">
+    <section className="flex justify-between items-center  max-sm:flex-col p-4 max-md:flex-col max-lg:flex-col max-xl:flex-col min-h-screen">
       <Image src="/study.svg" width={500} height={500} alt="studying" />
       <div className="max-md:flex flex-col">
         <h4 className="text-3xl font-bold">
           We offer valuable materials in different formats.
         </h4>
-        <div className="flex flex-col">
-          <div className="flex">
+        <div className="flex flex-col justify-center">
+          <div className="grid grid-cols-2 max-sm:grid-cols-1">
             <OfferIcon
               icon={<GrCatalogOption size={18} color="var(--accent-color)" />}
               label="Course Catalog"
@@ -39,7 +39,7 @@ const Offer = () => {
               description="Engaging and interactive course content, including video lectures, quizzes, and assignments"
             />
           </div>
-          <div className="flex">
+          <div className="grid grid-cols-2 max-sm:grid-cols-1">
             <OfferIcon
               icon={<GrResources size={18} color="var(--active-color)" />}
               label="Resources"

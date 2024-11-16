@@ -6,13 +6,13 @@ function CategoriesPage() {
   return (
     <div>
       <div className=" flex justify-center items-center  h-32 w-[calc(100% - 2rem)] rounded">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-yellow-400 to-orange-400 bg-clip-text text-transparent max-sm:text-2xl">
           All Categories
         </h1>
       </div>
       {/* List of categories */}
-      <div className="my-4">
-        <ul className="ml-4 grid grid-cols-4 gap-4">
+      <div className="my-2">
+        <ul className="ml-4 grid grid-cols-4 gap-4 max-sm:grid-cols-2">
           {categories.map((category, index) => (
             <li key={index} className="my-4">
               <figure
@@ -28,7 +28,7 @@ function CategoriesPage() {
                 />
 
                 <figcaption className="my-4">
-                  <Link href={category.link} className="hover:underline">
+                  <Link href={category.link} className="hover:underline ">
                     {category.label}
                   </Link>
                 </figcaption>
