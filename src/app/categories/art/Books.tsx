@@ -30,30 +30,34 @@ function Books() {
         setError({ message: error.message });
       }
     };
-    fetchBooks()
+    fetchBooks();
   }, []);
   return (
     <div className="my-4">
-      <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-2 ">
-        {error && <p className="text-red-500">{error.message}</p>}
-        {books.map((book) => (
-          <div key={book.key} className="p-4 bg-white rounded shadow">
-            {book.cover_i ? (
-              <Image
-                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-                alt={`Cover of ${book.title}`}
-                className="mb-2 rounded w-[200px] h-[200px]"
-              />
-            ) : (
-              <div className="h-40 w-full bg-gray-200 flex items-center justify-center">
-                <span>No Cover Available</span>
-              </div>
-            )}
-            <h4 className="text-lg font-bold">{book.title}</h4>
-            {book.author_name && <p>Author: {book.author_name.join(", ")}</p>}
-          </div>
-        ))}
-      </div>
+      {error && <p className="text-red-500">{error.message}</p>}
+      {books.length === 0 ? (
+        <p>Loading books...</p>
+      ) : (
+        <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-2 ">
+          {books.map((book) => (
+            <div key={book.key} className="p-4 bg-white rounded shadow">
+              {book.cover_i ? (
+                <Image
+                  src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                  alt={`Cover of ${book.title}`}
+                  className="mb-2 rounded w-[200px] h-[200px]"
+                />
+              ) : (
+                <div className="h-40 w-full bg-gray-200 flex items-center justify-center">
+                  <span>No Cover Available</span>
+                </div>
+              )}
+              <h4 className="text-lg font-bold">{book.title}</h4>
+              {book.author_name && <p>Author: {book.author_name.join(", ")}</p>}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
