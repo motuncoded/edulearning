@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import CategoryLayout from "../../components/CategoryLayout"
+import CategoryLayout from "../../components/CategoryLayout";
+
 import Books from "./Books";
 import Videos from "./Videos";
 
@@ -19,7 +20,8 @@ const Art = () => {
   return (
     <CategoryLayout
       title="Art"
-      heading="Explore a diverse range of educational materials on art, from history and techniques to modern styles and creative expression."
+      heading="Explore a diverse range of educational materials on art, techniques to modern styles and creative expression."
+
       icon="&#127912;"
     >
       <div className="mt-8">
