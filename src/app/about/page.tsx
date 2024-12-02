@@ -3,11 +3,11 @@ import Image from "next/image";
 function AboutPage() {
   return (
     <section className="my-10 p-4">
-      <h2 className="mb-2 px-2 max-sm:px-0">About us</h2>
-      <h3 className="w-3/4 text-6xl  font-semibold mb-4 max-sm:text-4xl">
+      <h1 className="mb-2 px-2 max-sm:px-0">About us</h1>
+      <h2 className="w-3/4 text-6xl  font-semibold mb-4 max-sm:text-4xl">
         Making standard on the
         <span className="text-gray-500"> collection of materials.</span>
-      </h3>
+      </h2>
       <div className="mt-6 relative">
         <Image
           src="/reading.jpg"
