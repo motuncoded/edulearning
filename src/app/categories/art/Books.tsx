@@ -32,7 +32,7 @@ function Books() {
     };
     fetchBooks();
   }, []);
-  
+
   return (
     <div className="my-4">
       {error && <p className="text-red-500">{error.message}</p>}

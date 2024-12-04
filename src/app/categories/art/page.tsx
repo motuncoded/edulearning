@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CategoryLayout from "../../components/CategoryLayout";
 
+
 import Books from "./Books";
 import Videos from "./Videos";
 
@@ -21,7 +22,6 @@ const Art = () => {
     <CategoryLayout
       title="Art"
       heading="Explore a diverse range of educational materials on art, techniques to modern styles and creative expression."
-
       icon="&#127912;"
     >
       <div className="mt-8">
