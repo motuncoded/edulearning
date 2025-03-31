@@ -18,7 +18,7 @@ function AboutPage() {
           className="rounded-lg"
         />
 
-        <div className="hidden  xl:block absolute top-32 left-2/4 bg-white h-60 w-80 rounded-md shadow-lg p-4 flex justify-center items-center flex-col">
+        <div className="hidden  xl:flex absolute top-32 left-2/4 bg-white h-60 w-80 rounded-md shadow-lg p-4  justify-center items-center flex-col">
           <h3 className="font-bold mb-2">Our Misson</h3>
           <p className="text-[.975rem]">
             {" "}
