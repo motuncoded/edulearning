@@ -45,10 +45,10 @@ const CourseCard = ({
 
 const Videos = () => {
   return (
-    <section className="flex flex-col justify-center items-center p-4">
+    <section className="flex flex-col justify-center items-center md:my-16 p-4">
       <h4 className="text-3xl py-4">Popular courses</h4>
-      <div className="max-w-[1000px] w-[calc(100% - 2rem)] m-auto">
-        <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-2">
+      <div className="max-w-[1000px] w-[calc(100% - 2rem)] mx-auto ">
+        <div className="grid grid-cols-1 place-items-start gap-4 md:grid-cols-2 xl:grid-cols-3">
           <CourseCard
             title="Project Management Full Course"
             description="Project management"
@@ -70,7 +70,7 @@ const Videos = () => {
             duration="46 minutes"
             src="https://www.youtube.com/embed/hASHO5ap1Sw?si=L0mJOSPpBvtO_N1e"
           />
-          <div className=" ">
+          <div className="flex items-center ">
             <button
               type="submit"
               className="bg-[var(--primary-color)]  text-white w-[200px] p-2 hover:bg-[var(--hover-color)] border rounded max-sm:w-[325px] max-md:w-[325px] "

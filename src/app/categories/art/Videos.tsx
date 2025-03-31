@@ -69,5 +69,4 @@ export default function Videos() {
       </div>
     </div>
   );
-
 }

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import validator from "validator";
+import { supabase } from "../../lib/supabaseClient";
 
 export async function POST(request: Request) {
   const { email } = await request.json();
@@ -10,6 +11,9 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+  const { data, error: insertError } = await supabase
+    .from("subscribers")
+    .insert([{ email }]);
 
   console.log(`Subscribed: ${email}`);
 

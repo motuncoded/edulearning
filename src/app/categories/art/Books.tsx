@@ -59,7 +59,6 @@ function Books() {
           ))}
         </div>
       )}
-
     </div>
   );
 }
