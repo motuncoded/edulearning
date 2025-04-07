@@ -46,6 +46,8 @@ function Books() {
                 <Image
                   src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                   alt={`Cover of ${book.title}`}
+                  width="200"
+                  height="200"
                   className="mb-2 rounded w-[200px] h-[200px]"
                 />
               ) : (

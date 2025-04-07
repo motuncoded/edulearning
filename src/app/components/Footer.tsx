@@ -126,6 +126,8 @@ const Useful = () => {
     </section>
   );
 };
+
+// Subscribe file
 const Subscribe = () => {
   const [email, setEmail] = useState("");
   const [subscribeMessage, setSubscribeMessage] = useState("");
@@ -133,18 +135,31 @@ const Subscribe = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setError(""); // Reset error message
 
-    const response = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }), // Send array of emails
+      });
 
-    const result = await response.json();
-    setSubscribeMessage(result.message);
-    setEmail("");
+      console.log("API response:", response); // Log the response
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      const result = await response.json();
+      console.log("API result:", result); // Log the result
+      setSubscribeMessage("Subscription successful");
+      setEmail("");
+    } catch (error: any) {
+      console.error("Subscription error:", error.message); // Log error message
+      setError(error.message);
+    }
   };
 
   useEffect(() => {
@@ -156,19 +171,20 @@ const Subscribe = () => {
       return () => clearTimeout(timer);
     }
   }, [subscribeMessage]);
+
   return (
-    <section className="mt-4" aria-label="Subscribe ">
-      <p className="font-bold">Subscribe for our newsletter.</p>
+    <section className="mt-4" aria-label="Subscribe">
+      <p className="font-bold">Subscribe to our newsletter.</p>
       <p className="text-[.9rem] w-[250px] text-gray-800">
         Get notifications right in your mailbox to know about the latest news on
-        education.{" "}
+        education.
       </p>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="search" className="sr-only">
-          Search
+        <label htmlFor="email" className="sr-only">
+          Email
         </label>
         <input
-          type="text"
+          type="email"
           value={email}
           className="border b-2 border-gray-200 p-2 my-4 mr-2 text-[.9rem]"
           placeholder="Enter email"
@@ -179,7 +195,7 @@ const Subscribe = () => {
         <button
           type="submit"
           aria-label="send button"
-          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.9rem] "
+          className="text-white bg-[var(--primary-color)] rounded p-2 text-[.9rem]"
         >
           Send
         </button>
@@ -187,9 +203,17 @@ const Subscribe = () => {
       {subscribeMessage && (
         <p
           className="text-green-600 text-[.75rem]"
-          aria-describedby="usernameError"
+          aria-describedby="subscribeMessage"
         >
           {subscribeMessage}
+        </p>
+      )}
+      {error && (
+        <p
+          className="text-red-600 text-[.75rem]"
+          aria-describedby="errorMessage"
+        >
+          {error}
         </p>
       )}
     </section>

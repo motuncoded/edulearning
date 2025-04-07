@@ -9,7 +9,9 @@ import { LiaTimesSolid } from "react-icons/lia";
 const Logo = () => (
   <header className="flex justify-center items-center">
     <PiBookOpenUserFill size="22" className="text-[var(--accent-color)] mx-2" />
-    <h1 className="text-[1.38rem]">edulearning</h1>
+    <Link href="/">
+      <h1 className="text-[1.38rem]">edulearning</h1>
+    </Link>
   </header>
 );
 

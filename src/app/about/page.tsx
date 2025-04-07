@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 function AboutPage() {
   return (
     <section className="my-10 p-4">
@@ -70,7 +69,6 @@ function AboutPage() {
         </div>
       </div>
     </section>
-   
   );
 }
 
