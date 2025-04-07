@@ -8,8 +8,10 @@ import { LiaTimesSolid } from "react-icons/lia";
 
 const Logo = () => (
   <header className="flex justify-center items-center">
-    <PiBookOpenUserFill size="22" className="text-[var(--accent-color)] mr-2" />
-    <h1 className="text-[1.38rem]">edulearning</h1>
+    <PiBookOpenUserFill size="22" className="text-[var(--accent-color)] mx-2" />
+    <Link href="/">
+      <h1 className="text-[1.38rem]">edulearning</h1>
+    </Link>
   </header>
 );
 
@@ -23,7 +25,7 @@ const NavItem = ({ href, children }: NavItemProps) => {
   const isActive = href === pathname;
   return (
     <li
-      className={`${isActive ? "text-[var(--accent-color)]" : ""} mr-6  max-sm:mr-0 my-2 mx-4 `}
+      className={`${isActive ? "text-[var(--accent-color)]" : ""}   max-sm:mr-0 my-2 `}
     >
       <Link href={href} className="text-[1rem]">
         {children}
@@ -34,7 +36,7 @@ const NavItem = ({ href, children }: NavItemProps) => {
 
 const NavList = () => (
   <nav aria-label="Main navigation">
-    <ul className="flex justify-center items-center py-4 max-sm:flex-col max-sm:justify-start  ">
+    <ul className="flex justify-center items-center py-4 max-sm:flex-col max-sm:justify-start space-x-6 mr-2 ">
       <NavItem href="/">Home</NavItem>
       <NavItem href="/about">About</NavItem>
       <NavItem href="/categories">Categories</NavItem>

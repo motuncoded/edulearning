@@ -15,7 +15,10 @@ type Error = {
   message: string;
 };
 const API_Key = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY; // Access the API key from the environment variable
-const VIDEO_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=art%20tutorial&type=video&key=${API_Key}`;
+// const VIDEO_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=art%20tutorial&type=video&key=${API_Key}`;
+
+const topics = "art tutorial|drawing for beginners|digital painting";
+const VIDEO_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(topics)}&type=video&key=${API_Key}`;
 
 export default function Videos() {
   const [videos, setVideos] = useState<VideoType[]>([]);
@@ -69,5 +72,4 @@ export default function Videos() {
       </div>
     </div>
   );
-
 }
