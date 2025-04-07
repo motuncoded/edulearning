@@ -24,7 +24,10 @@ function BlogCard() {
   const [totalResults, setTotalResults] = useState(0);
 
   const PAGE_SIZE = 6;
-  const NEWS_URL = `https://newsapi.org/v2/everything?q=learning&from=2025-03-06&sortBy=publishedAt&pageSize=${PAGE_SIZE}&page=${currentPage}&apiKey=9bb1ce4f63d74db08d7433bd4bfd17a5`;
+  const NEXT_PUBLIC_NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
+
+  const NEWS_URL = `https://newsapi.org/v2/everything?q=learning&from=2025-03-06&sortBy=publishedAt&pageSize=${PAGE_SIZE}&page=${currentPage}&apiKey=${NEXT_PUBLIC_NEWS_API_KEY}`;
+
 
   useEffect(() => {
     const fetchPosts = async () => {
