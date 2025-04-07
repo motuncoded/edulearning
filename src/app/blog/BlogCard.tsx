@@ -17,16 +17,17 @@ type Error = {
   message: string;
 };
 
+  const PAGE_SIZE = 6;
+  const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
+
 function BlogCard() {
   const [posts, setPosts] = useState<BlogType[]>([]);
   const [error, setError] = useState<Error | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
-  const PAGE_SIZE = 6;
-  const NEXT_PUBLIC_NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
 
-  const NEWS_URL = `https://newsapi.org/v2/everything?q=learning&from=2025-03-06&sortBy=publishedAt&pageSize=${PAGE_SIZE}&page=${currentPage}&apiKey=${NEXT_PUBLIC_NEWS_API_KEY}`;
+  const NEWS_URL = `https://newsapi.org/v2/everything?q=learning&from=2025-03-06&sortBy=publishedAt&pageSize=${PAGE_SIZE}&page=${currentPage}&apiKey=${NEWS_API_KEY}`;
 
 
   useEffect(() => {
